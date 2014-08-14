@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @estudio.nombre %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @estudio.descripcion %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @estudio.fecha %>
+</p>
+
+<p>
+  <strong>Lugar:</strong>
+  <%= @estudio.lugar %>
+</p>
+
+<p>
+  <strong>Empleado:</strong>
+  <%= @estudio.empleado %>
+</p>
+
+<%= link_to 'Edit', edit_estudio_path(@estudio) %> |
+<%= link_to 'Back', estudios_path %>

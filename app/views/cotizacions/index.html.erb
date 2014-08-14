@@ -1,0 +1,47 @@
+<h1>Listing cotizacions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cliente</th>
+      <th>Telefono</th>
+      <th>Empresa</th>
+      <th>Nit</th>
+      <th>Producto</th>
+      <th>Descripcion</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th>Iva</th>
+      <th>Subtotal</th>
+      <th>Total</th>
+      <th>Estado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cotizacions.each do |cotizacion| %>
+      <tr>
+        <td><%= cotizacion.cliente %></td>
+        <td><%= cotizacion.telefono %></td>
+        <td><%= cotizacion.empresa %></td>
+        <td><%= cotizacion.nit %></td>
+        <td><%= cotizacion.producto %></td>
+        <td><%= cotizacion.descripcion %></td>
+        <td><%= cotizacion.cantidad %></td>
+        <td><%= cotizacion.precio %></td>
+        <td><%= cotizacion.iva %></td>
+        <td><%= cotizacion.subtotal %></td>
+        <td><%= cotizacion.total %></td>
+        <td><%= cotizacion.estado %></td>
+        <td><%= link_to 'Show', cotizacion %></td>
+        <td><%= link_to 'Edit', edit_cotizacion_path(cotizacion) %></td>
+        <td><%= link_to 'Destroy', cotizacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cotizacion', new_cotizacion_path %>

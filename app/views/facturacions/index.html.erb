@@ -1,0 +1,49 @@
+<h1>Listing facturacions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Fchven</th>
+      <th>Cotizacion</th>
+      <th>Cliente</th>
+      <th>Telefono</th>
+      <th>Empresa</th>
+      <th>Nit</th>
+      <th>Producto</th>
+      <th>Descripcion</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th>Iva</th>
+      <th>Subtotal</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @facturacions.each do |facturacion| %>
+      <tr>
+        <td><%= facturacion.fecha %></td>
+        <td><%= facturacion.fchven %></td>
+        <td><%= facturacion.cotizacion %></td>
+        <td><%= facturacion.cliente %></td>
+        <td><%= facturacion.telefono %></td>
+        <td><%= facturacion.empresa %></td>
+        <td><%= facturacion.nit %></td>
+        <td><%= facturacion.producto %></td>
+        <td><%= facturacion.descripcion %></td>
+        <td><%= facturacion.cantidad %></td>
+        <td><%= facturacion.precio %></td>
+        <td><%= facturacion.iva %></td>
+        <td><%= facturacion.subtotal %></td>
+        <td><%= link_to 'Show', facturacion %></td>
+        <td><%= link_to 'Edit', edit_facturacion_path(facturacion) %></td>
+        <td><%= link_to 'Destroy', facturacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Facturacion', new_facturacion_path %>

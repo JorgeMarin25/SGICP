@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @cotizacion.cliente %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @cotizacion.telefono %>
+</p>
+
+<p>
+  <strong>Empresa:</strong>
+  <%= @cotizacion.empresa %>
+</p>
+
+<p>
+  <strong>Nit:</strong>
+  <%= @cotizacion.nit %>
+</p>
+
+<p>
+  <strong>Producto:</strong>
+  <%= @cotizacion.producto %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @cotizacion.descripcion %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @cotizacion.cantidad %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @cotizacion.precio %>
+</p>
+
+<p>
+  <strong>Iva:</strong>
+  <%= @cotizacion.iva %>
+</p>
+
+<p>
+  <strong>Subtotal:</strong>
+  <%= @cotizacion.subtotal %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @cotizacion.total %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @cotizacion.estado %>
+</p>
+
+<%= link_to 'Edit', edit_cotizacion_path(@cotizacion) %> |
+<%= link_to 'Back', cotizacions_path %>

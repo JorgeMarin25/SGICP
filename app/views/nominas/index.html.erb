@@ -1,0 +1,43 @@
+<h1>Listing nominas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Salariobasico</th>
+      <th>Horasextras</th>
+      <th>Recargosdiurnos</th>
+      <th>Recargosnocturnos</th>
+      <th>Dominicales</th>
+      <th>Festivos</th>
+      <th>Comisiones</th>
+      <th>Diasnotrabajados</th>
+      <th>Horasnotrabajadas</th>
+      <th>Empleado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nominas.each do |nomina| %>
+      <tr>
+        <td><%= nomina.salariobasico %></td>
+        <td><%= nomina.horasextras %></td>
+        <td><%= nomina.recargosdiurnos %></td>
+        <td><%= nomina.recargosnocturnos %></td>
+        <td><%= nomina.dominicales %></td>
+        <td><%= nomina.festivos %></td>
+        <td><%= nomina.comisiones %></td>
+        <td><%= nomina.diasnotrabajados %></td>
+        <td><%= nomina.horasnotrabajadas %></td>
+        <td><%= nomina.empleado %></td>
+        <td><%= link_to 'Show', nomina %></td>
+        <td><%= link_to 'Edit', edit_nomina_path(nomina) %></td>
+        <td><%= link_to 'Destroy', nomina, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Nomina', new_nomina_path %>

@@ -1,0 +1,57 @@
+<%= form_for(@nomina) do |f| %>
+  <% if @nomina.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nomina.errors.count, "error") %> prohibited this nomina from being saved:</h2>
+
+      <ul>
+      <% @nomina.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :salariobasico %><br>
+    <%= f.number_field :salariobasico %>
+  </div>
+  <div class="field">
+    <%= f.label :horasextras %><br>
+    <%= f.number_field :horasextras %>
+  </div>
+  <div class="field">
+    <%= f.label :recargosdiurnos %><br>
+    <%= f.number_field :recargosdiurnos %>
+  </div>
+  <div class="field">
+    <%= f.label :recargosnocturnos %><br>
+    <%= f.number_field :recargosnocturnos %>
+  </div>
+  <div class="field">
+    <%= f.label :dominicales %><br>
+    <%= f.number_field :dominicales %>
+  </div>
+  <div class="field">
+    <%= f.label :festivos %><br>
+    <%= f.number_field :festivos %>
+  </div>
+  <div class="field">
+    <%= f.label :comisiones %><br>
+    <%= f.number_field :comisiones %>
+  </div>
+  <div class="field">
+    <%= f.label :diasnotrabajados %><br>
+    <%= f.number_field :diasnotrabajados %>
+  </div>
+  <div class="field">
+    <%= f.label :horasnotrabajadas %><br>
+    <%= f.number_field :horasnotrabajadas %>
+  </div>
+  <div class="field">
+    <%= f.label :empleado_id %><br>
+    <%= f.text_field :empleado_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

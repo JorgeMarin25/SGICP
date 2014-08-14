@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha: 2014-08-14
+  fchven: 2014-08-14
+  cotizacion: MyString
+  cliente: MyString
+  telefono: MyString
+  empresa: MyString
+  nit: MyString
+  producto: MyString
+  descripcion: MyText
+  cantidad: MyString
+  precio: 1
+  iva: 1
+  subtotal: 1
+
+two:
+  fecha: 2014-08-14
+  fchven: 2014-08-14
+  cotizacion: MyString
+  cliente: MyString
+  telefono: MyString
+  empresa: MyString
+  nit: MyString
+  producto: MyString
+  descripcion: MyText
+  cantidad: MyString
+  precio: 1
+  iva: 1
+  subtotal: 1
