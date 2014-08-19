@@ -4,7 +4,7 @@ class CategoriaController < ApplicationController
   # GET /categoria
   # GET /categoria.json
   def index
-    @categoria = Categorium.all
+    @categoria = Categorium.search(params[:search], params[:page])
   end
 
   # GET /categoria/1

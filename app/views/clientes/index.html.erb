@@ -1,5 +1,13 @@
 <h1>Listing clientes</h1>
 
+<%= form_tag clientes_path, :method => 'get' do %>
+<% content_tag :label do %>
+Search term:
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag "Buscar", :nombre=> nil %>
+<% end %>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -35,3 +43,7 @@
 <br>
 
 <%= link_to 'New Cliente', new_cliente_path %>
+
+<%= will_paginate @clientes, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
+<br>
+Clientes: <%= @clientes.count %>

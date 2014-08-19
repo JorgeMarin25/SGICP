@@ -27,14 +27,14 @@
       <tr>
         <td><%= empleado.nombre %></td>
         <td><%= empleado.doc %></td>
-        <td><%= empleado.estado %></td>
+        <td><%= empleado.estado.name %></td>
         <td><%= empleado.direccion %></td>
         <td><%= empleado.barrio %></td>
         <td><%= empleado.ciudad %></td>
         <td><%= empleado.telefono %></td>
         <td><%= empleado.celular %></td>
         <td><%= empleado.correo %></td>
-        <td><%= empleado.genero %></td>
+        <td><%= mostrar_genero(empleado.genero) %></td>
         <td><%= empleado.fchinicio %></td>
         <td><%= empleado.fchfinal %></td>
         <td><%= empleado.cargo %></td>

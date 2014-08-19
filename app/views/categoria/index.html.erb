@@ -1,4 +1,14 @@
-<h1>Listing categoria</h1>
+<h1>Lista de categorias</h1>
+
+<%= form_tag categoria_path, :method => 'get' do %>
+<% content_tag :label do %>
+Search term:
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag "Buscar", :name => nil %>
+<% end %>
+<% end %>
+
+
 
 <table>
   <thead>
@@ -12,9 +22,9 @@
     <% @categoria.each do |categorium| %>
       <tr>
         <td><%= categorium.nombre %></td>
-        <td><%= link_to 'Show', categorium %></td>
-        <td><%= link_to 'Edit', edit_categorium_path(categorium) %></td>
-        <td><%= link_to 'Destroy', categorium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', categorium %></td>
+        <td><%= link_to 'Editar', edit_categorium_path(categorium) %></td>
+        <td><%= link_to 'Eliminar', categorium, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +32,8 @@
 
 <br>
 
-<%= link_to 'New Categorium', new_categorium_path %>
+<%= link_to 'Nueva Categoria', new_categorium_path %>
+
+<%= will_paginate @categoria, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
+<br>
+categoria: <%= @categoria.count %>
