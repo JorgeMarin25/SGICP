@@ -4,7 +4,7 @@ class EmpleadosController < ApplicationController
   # GET /empleados
   # GET /empleados.json
   def index
-    @empleados = Empleado.all
+    @empleados = Empleado.search(params[:search], params[:page])
   end
 
   # GET /empleados/1

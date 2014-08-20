@@ -11,6 +11,13 @@
     </div>
   <% end %>
 
+  <div class="field"> 
+ <br> <%= f.collection_select :empleado_id, Empleado.all, :id, :nombre, class: "form­control", prompt: 
+"Seleccione empleado" %> 
+</div> 
+
+  
+
   <div class="field">
     <%= f.label :salariobasico %><br>
     <%= f.number_field :salariobasico %>
@@ -47,10 +54,8 @@
     <%= f.label :horasnotrabajadas %><br>
     <%= f.number_field :horasnotrabajadas %>
   </div>
-  <div class="field">
-    <%= f.label :empleado_id %><br>
-    <%= f.text_field :empleado_id %>
-  </div>
+  
+
   <div class="actions">
     <%= f.submit %>
   </div>

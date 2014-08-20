@@ -48,3 +48,4 @@ gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
 gem 'quiet_assets'
 gem 'rails_layout'
 end
+gem "binding_of_caller"
