@@ -4,7 +4,8 @@ class FacturacionsController < ApplicationController
   # GET /facturacions
   # GET /facturacions.json
   def index
-    @facturacions = Facturacion.all
+    #@facturacions = Facturacion.all
+    @facturacions = Facturacion.search(params[:search], params[:page]) 
   end
 
   # GET /facturacions/1

@@ -1,5 +1,13 @@
 <h1>Listing cotizacions</h1>
 
+<%= form_tag cotizacions_path, :method => 'get' do %> 
+<% content_tag :label do %> 
+Buscar por: 
+<%= text_field_tag :search, params[:search] %> 
+<%= submit_tag "Buscar", :id => nil %> 
+<% end %> 
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -34,9 +42,9 @@
         <td><%= cotizacion.subtotal %></td>
         <td><%= cotizacion.total %></td>
         <td><%= cotizacion.estado %></td>
-        <td><%= link_to 'Show', cotizacion %></td>
-        <td><%= link_to 'Edit', edit_cotizacion_path(cotizacion) %></td>
-        <td><%= link_to 'Destroy', cotizacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', cotizacion %></td>
+        <td><%= link_to 'Editar', edit_cotizacion_path(cotizacion) %></td>
+        <td><%= link_to 'Eliminar', cotizacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -44,4 +52,9 @@
 
 <br>
 
-<%= link_to 'New Cotizacion', new_cotizacion_path %>
+<%= link_to 'Nueva cotizacion', new_cotizacion_path %>
+
+<%= will_paginate @cotizacions, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
+&raquo;' %> 
+<br> 
+Cotizaciones: <%= @cotizacions.count %>

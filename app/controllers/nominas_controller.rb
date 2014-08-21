@@ -4,7 +4,7 @@ class NominasController < ApplicationController
   # GET /nominas
   # GET /nominas.json
   def index
-    @nominas = Nomina.all
+    @nominas = Nomina.search(params[:search], params[:page]) 
   end
 
   # GET /nominas/1

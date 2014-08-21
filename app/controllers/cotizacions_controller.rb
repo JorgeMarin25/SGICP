@@ -4,7 +4,7 @@ class CotizacionsController < ApplicationController
   # GET /cotizacions
   # GET /cotizacions.json
   def index
-    @cotizacions = Cotizacion.all
+    @cotizacions = Cotizacion.search(params[:search], params[:page]) 
   end
 
   # GET /cotizacions/1
