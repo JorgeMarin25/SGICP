@@ -1,11 +1,15 @@
 class Inventario < ActiveRecord::Base
-def self.search(search, page) where(['upper(productos) like ?', 
-	"%#{search}%".upcase]).paginate(page: page, per_page: 5).order("productos") 
-	end 
+<<<<<<< HEAD
+
 	# Validar que los atributos sean obligatorios
 	validates :productos, :presence => true
 	validates :cantidad, :presence => true
 	# Valida si un atributo es numerico
 	validates :cantidad, numericality: true
 
+=======
+	def self.search(search, page) where(['upper(productos) like ?', 
+	"%#{search}%".upcase]).paginate(page: page, per_page: 5).order("productos") 
+	end 
+>>>>>>> 64567ad9585ada6c1046f7ef75c49aceaaa3ff28
 end

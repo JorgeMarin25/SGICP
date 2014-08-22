@@ -1,7 +1,5 @@
 class Cotizacion < ActiveRecord::Base
-	def self.search(search, page) where(['upper(id) like ?', 
-		"%#{search}%".upcase]).paginate(page: page, per_page: 5).order("id") 
-	end 
+<<<<<<< HEAD
 	# Validar que los atributos sean obligatorios
 	validates :cliente, :presence => true
 	validates :telefono, :presence => true
@@ -21,4 +19,9 @@ class Cotizacion < ActiveRecord::Base
 	validates :telefono, numericality: true
 	
 
+=======
+	def self.search(search, page) where(['upper(id) like ?', 
+		"%#{search}%".upcase]).paginate(page: page, per_page: 5).order("id") 
+	end 
+>>>>>>> 64567ad9585ada6c1046f7ef75c49aceaaa3ff28
 end

@@ -1,5 +1,8 @@
 <h1>Listing facturacions</h1>
 
+<<<<<<< HEAD
+<table class="table table-condensed">
+=======
 <%= form_tag clientes_path, :method => 'get' do %> 
   <% content_tag :label do %> 
     Buscar: 
@@ -7,7 +10,9 @@
     <%= submit_tag "Buscar", :fecha => nil %> 
   <% end %> 
 <% end %> 
-<table class="table table-condensed">
+
+<table>
+>>>>>>> 64567ad9585ada6c1046f7ef75c49aceaaa3ff28
   <thead>
     <tr>
       <th>Fecha</th>

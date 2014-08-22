@@ -1,5 +1,8 @@
 <h1>Listing inventarios</h1>
 
+<<<<<<< HEAD
+<table class="table table-condensed">
+=======
 
 <%= form_tag inventarios_path, :method => 'get' do %> 
 <% content_tag :label do %> 
@@ -9,7 +12,8 @@ Search term:
 <% end %> 
 <% end %> 
 
-<table class="table table-condensed">
+<table>
+>>>>>>> 64567ad9585ada6c1046f7ef75c49aceaaa3ff28
   <thead>
     <tr>
       <th>Productos</th>

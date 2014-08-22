@@ -1,7 +1,6 @@
 class Facturacion < ActiveRecord::Base
-	def self.search(search, page) where(['upper(fecha) like ?', 
-		"%#{search}%".upcase]).paginate(page: page, per_page: 5).order("fecha") 
-	end 
+<<<<<<< HEAD
+
 	# Validar que los atributos sean obligatorios
 	validates :fecha, :presence => true
 	validates :fchven, :presence => true
@@ -19,4 +18,9 @@ class Facturacion < ActiveRecord::Base
 	# Valida si un atributo es numerico
 	validates :cantidad, numericality: true
 
+=======
+	def self.search(search, page) where(['upper(fecha) like ?', 
+		"%#{search}%".upcase]).paginate(page: page, per_page: 5).order("fecha") 
+	end 
+>>>>>>> 64567ad9585ada6c1046f7ef75c49aceaaa3ff28
 end
