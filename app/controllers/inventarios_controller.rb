@@ -4,7 +4,7 @@ class InventariosController < ApplicationController
   # GET /inventarios
   # GET /inventarios.json
   def index
-    @inventarios = Inventario.all
+    @inventarios = Inventario.search(params[:search], params[:page]) 
   end
 
   # GET /inventarios/1

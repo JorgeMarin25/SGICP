@@ -1,5 +1,8 @@
 <h1>Listing cotizacions</h1>
+<<<<<<< HEAD
 <table class="table table-condensed">
+=======
+
 <%= form_tag cotizacions_path, :method => 'get' do %> 
 <% content_tag :label do %> 
 Buscar por: 
@@ -9,6 +12,7 @@ Buscar por:
 <% end %>
 
 <table>
+>>>>>>> 64567ad9585ada6c1046f7ef75c49aceaaa3ff28
   <thead>
     <tr>
       <th>Cliente</th>

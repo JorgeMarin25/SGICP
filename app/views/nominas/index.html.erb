@@ -1,5 +1,12 @@
 <h1>Listing nominas</h1>
 
+<%= form_tag nominas_path, :method => 'get' do %> 
+<% content_tag :label do %> 
+Buscar por: 
+<%= text_field_tag :search, params[:search] %> 
+<%= submit_tag "Buscar", :empleado_id => nil %> 
+<% end %> 
+<% end %> 
 
 <table class="table table-condensed">
   <thead>
@@ -30,7 +37,7 @@
         <td><%= nomina.comisiones %></td>
         <td><%= nomina.diasnotrabajados %></td>
         <td><%= nomina.horasnotrabajadas %></td>
-         <td><%= nomina.empleado %></td>
+         <td><%= nomina.empleado.nombre %></td>
         <td><%= link_to 'Show', nomina %></td>
         <td><%= link_to 'Edit', edit_nomina_path(nomina) %></td>
         <td><%= link_to 'Destroy', nomina, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -42,3 +49,8 @@
 <br>
 
 <%= link_to 'New Nomina', new_nomina_path %>
+
+<%= will_paginate @nominas, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
+&raquo;' %> 
+<br> 
+Nominas: <%= @nominas.count %> 
