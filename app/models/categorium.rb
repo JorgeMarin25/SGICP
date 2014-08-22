@@ -1,4 +1,7 @@
 class Categorium < ActiveRecord::Base
+	# Validar que los atributos sean obligatorios
+validates :nombre, :presence => true
+
 
 	def self.search(search, page)
 	where(['upper(nombre) like ?',
