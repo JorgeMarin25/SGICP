@@ -1,0 +1,83 @@
+                 Prefix Verb   URI Pattern                                          Controller#Action
+                nominas GET    /nominas(.:format)                                   nominas#index
+                        POST   /nominas(.:format)                                   nominas#create
+             new_nomina GET    /nominas/new(.:format)                               nominas#new
+            edit_nomina GET    /nominas/:id/edit(.:format)                          nominas#edit
+                 nomina GET    /nominas/:id(.:format)                               nominas#show
+                        PATCH  /nominas/:id(.:format)                               nominas#update
+                        PUT    /nominas/:id(.:format)                               nominas#update
+                        DELETE /nominas/:id(.:format)                               nominas#destroy
+            inventarios GET    /inventarios(.:format)                               inventarios#index
+                        POST   /inventarios(.:format)                               inventarios#create
+         new_inventario GET    /inventarios/new(.:format)                           inventarios#new
+        edit_inventario GET    /inventarios/:id/edit(.:format)                      inventarios#edit
+             inventario GET    /inventarios/:id(.:format)                           inventarios#show
+                        PATCH  /inventarios/:id(.:format)                           inventarios#update
+                        PUT    /inventarios/:id(.:format)                           inventarios#update
+                        DELETE /inventarios/:id(.:format)                           inventarios#destroy
+           facturacions GET    /facturacions(.:format)                              facturacions#index
+                        POST   /facturacions(.:format)                              facturacions#create
+        new_facturacion GET    /facturacions/new(.:format)                          facturacions#new
+       edit_facturacion GET    /facturacions/:id/edit(.:format)                     facturacions#edit
+            facturacion GET    /facturacions/:id(.:format)                          facturacions#show
+                        PATCH  /facturacions/:id(.:format)                          facturacions#update
+                        PUT    /facturacions/:id(.:format)                          facturacions#update
+                        DELETE /facturacions/:id(.:format)                          facturacions#destroy
+            cotizacions GET    /cotizacions(.:format)                               cotizacions#index
+                        POST   /cotizacions(.:format)                               cotizacions#create
+         new_cotizacion GET    /cotizacions/new(.:format)                           cotizacions#new
+        edit_cotizacion GET    /cotizacions/:id/edit(.:format)                      cotizacions#edit
+             cotizacion GET    /cotizacions/:id(.:format)                           cotizacions#show
+                        PATCH  /cotizacions/:id(.:format)                           cotizacions#update
+                        PUT    /cotizacions/:id(.:format)                           cotizacions#update
+                        DELETE /cotizacions/:id(.:format)                           cotizacions#destroy
+    cliente_cotizacions GET    /clientes/:cliente_id/cotizacions(.:format)          cotizacions#index
+                        POST   /clientes/:cliente_id/cotizacions(.:format)          cotizacions#create
+ new_cliente_cotizacion GET    /clientes/:cliente_id/cotizacions/new(.:format)      cotizacions#new
+edit_cliente_cotizacion GET    /clientes/:cliente_id/cotizacions/:id/edit(.:format) cotizacions#edit
+     cliente_cotizacion GET    /clientes/:cliente_id/cotizacions/:id(.:format)      cotizacions#show
+                        PATCH  /clientes/:cliente_id/cotizacions/:id(.:format)      cotizacions#update
+                        PUT    /clientes/:cliente_id/cotizacions/:id(.:format)      cotizacions#update
+                        DELETE /clientes/:cliente_id/cotizacions/:id(.:format)      cotizacions#destroy
+               clientes GET    /clientes(.:format)                                  clientes#index
+                        POST   /clientes(.:format)                                  clientes#create
+            new_cliente GET    /clientes/new(.:format)                              clientes#new
+           edit_cliente GET    /clientes/:id/edit(.:format)                         clientes#edit
+                cliente GET    /clientes/:id(.:format)                              clientes#show
+                        PATCH  /clientes/:id(.:format)                              clientes#update
+                        PUT    /clientes/:id(.:format)                              clientes#update
+                        DELETE /clientes/:id(.:format)                              clientes#destroy
+              categoria GET    /categoria(.:format)                                 categoria#index
+                        POST   /categoria(.:format)                                 categoria#create
+         new_categorium GET    /categoria/new(.:format)                             categoria#new
+        edit_categorium GET    /categoria/:id/edit(.:format)                        categoria#edit
+             categorium GET    /categoria/:id(.:format)                             categoria#show
+                        PATCH  /categoria/:id(.:format)                             categoria#update
+                        PUT    /categoria/:id(.:format)                             categoria#update
+                        DELETE /categoria/:id(.:format)                             categoria#destroy
+              empleados GET    /empleados(.:format)                                 empleados#index
+                        POST   /empleados(.:format)                                 empleados#create
+           new_empleado GET    /empleados/new(.:format)                             empleados#new
+          edit_empleado GET    /empleados/:id/edit(.:format)                        empleados#edit
+               empleado GET    /empleados/:id(.:format)                             empleados#show
+                        PATCH  /empleados/:id(.:format)                             empleados#update
+                        PUT    /empleados/:id(.:format)                             empleados#update
+                        DELETE /empleados/:id(.:format)                             empleados#destroy
+            experiencia GET    /experiencia(.:format)                               experiencia#index
+                        POST   /experiencia(.:format)                               experiencia#create
+       new_experiencium GET    /experiencia/new(.:format)                           experiencia#new
+      edit_experiencium GET    /experiencia/:id/edit(.:format)                      experiencia#edit
+           experiencium GET    /experiencia/:id(.:format)                           experiencia#show
+                        PATCH  /experiencia/:id(.:format)                           experiencia#update
+                        PUT    /experiencia/:id(.:format)                           experiencia#update
+                        DELETE /experiencia/:id(.:format)                           experiencia#destroy
+               estudios GET    /estudios(.:format)                                  estudios#index
+                        POST   /estudios(.:format)                                  estudios#create
+            new_estudio GET    /estudios/new(.:format)                              estudios#new
+           edit_estudio GET    /estudios/:id/edit(.:format)                         estudios#edit
+                estudio GET    /estudios/:id(.:format)                              estudios#show
+                        PATCH  /estudios/:id(.:format)                              estudios#update
+                        PUT    /estudios/:id(.:format)                              estudios#update
+                        DELETE /estudios/:id(.:format)                              estudios#destroy
+           cotizaciones GET    /allcotizacions(.:format)                            cotizacions#allcotizacions
+                   root GET    /                                                    empleados#index

@@ -14,4 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require bootstrap 
+//= require lazybox 
 //= require_tree .
+
+$(document).on('ready page:load', function () { 
+     $.lazybox.settings={ cancelClass: "pure­button", submitClass: 'pure­button pure­button­primary' } 
+     $.rails.allowAction = $.lazybox.confirm; 
+});  

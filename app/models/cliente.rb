@@ -1,5 +1,7 @@
 class Cliente < ActiveRecord::Base
 
+has_many :cotizacions	
+
 
 # Validar que los atributos sean obligatorios
 validates :nombre, :presence => true

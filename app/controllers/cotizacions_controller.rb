@@ -1,34 +1,29 @@
 class CotizacionsController < ApplicationController
-  before_action :set_cotizacion, only: [:show, :edit, :update, :destroy]
 
-  # GET /cotizacions
-  # GET /cotizacions.json
+  before_action :set_cotizacion, except: [:allcotizacions]
+
   def index
-    @cotizacions = Cotizacion.search(params[:search], params[:page]) 
+      @cotizacions = @cliente.cotizacions.search(params[:search], params[:page]) 
   end
 
-  # GET /cotizacions/1
-  # GET /cotizacions/1.json
   def show
   end
 
-  # GET /cotizacions/new
   def new
-    @cotizacion = Cotizacion.new
+      @cotizacion = Cotizacion.new
+      @cotizacion.cliente_id = @cliente.id
   end
 
-  # GET /cotizacions/1/edit
   def edit
   end
 
-  # POST /cotizacions
-  # POST /cotizacions.json
   def create
     @cotizacion = Cotizacion.new(cotizacion_params)
+    @cotizacion.cliente_id = @cliente.id 
 
     respond_to do |format|
       if @cotizacion.save
-        format.html { redirect_to @cotizacion, notice: 'Cotizacion was successfully created.' }
+        format.html { redirect_to cliente_cotizacions_path(@cliente), notice: 'Cotizacion was successfully created.' }
         format.json { render :show, status: :created, location: @cotizacion }
       else
         format.html { render :new }
@@ -42,7 +37,7 @@ class CotizacionsController < ApplicationController
   def update
     respond_to do |format|
       if @cotizacion.update(cotizacion_params)
-        format.html { redirect_to @cotizacion, notice: 'Cotizacion was successfully updated.' }
+        format.html { redirect_to cliente_cotizacions_path(@cliente), notice: 'Cotizacion was successfully updated.' }
         format.json { render :show, status: :ok, location: @cotizacion }
       else
         format.html { render :edit }
@@ -56,19 +51,27 @@ class CotizacionsController < ApplicationController
   def destroy
     @cotizacion.destroy
     respond_to do |format|
-      format.html { redirect_to cotizacions_url, notice: 'Cotizacion was successfully destroyed.' }
+      format.html { redirect_to cliente_cotizacions_url(@cliente), notice: 'Cotizacion was successfully destroyed.' }
+
       format.json { head :no_content }
     end
   end
 
+  def allcotizacions
+    @cotizacions = Cotizacion.search(params[:search], params[:page]) 
+  end  
+
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_cotizacion
-      @cotizacion = Cotizacion.find(params[:id])
-    end
+  
+  def set_cotizacion 
+      @cliente = Cliente.find(params[:cliente_id])
+      @cotizacion = Cotizacion.find(params[:id]) if params[:id] 
+  end 
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cotizacion_params
-      params.require(:cotizacion).permit(:cliente, :telefono, :empresa, :nit, :producto, :descripcion, :cantidad, :precio, :iva, :subtotal, :total, :estado)
+      params.require(:cotizacion).permit(:cliente_id, :producto, :descripcion, 
+                                         :cantidad, :precio, :iva, :subtotal, :total, :estado)
     end
 end

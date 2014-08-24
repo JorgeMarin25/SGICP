@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140814210750) do
+ActiveRecord::Schema.define(version: 20140814210700) do
 
   create_table "categoria", force: true do |t|
     t.string   "nombre"
@@ -32,10 +32,7 @@ ActiveRecord::Schema.define(version: 20140814210750) do
   end
 
   create_table "cotizacions", force: true do |t|
-    t.string   "cliente"
-    t.string   "telefono"
-    t.string   "empresa"
-    t.string   "nit"
+    t.string   "cliente_id"
     t.string   "producto"
     t.text     "descripcion"
     t.string   "cantidad"

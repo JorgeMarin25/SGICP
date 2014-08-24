@@ -2,22 +2,22 @@
 
 <p>
   <strong>Cliente:</strong>
-  <%= @cotizacion.cliente %>
+  <%= @cotizacion.cliente.nombre %>
 </p>
 
 <p>
   <strong>Telefono:</strong>
-  <%= @cotizacion.telefono %>
+  <%= @cotizacion.cliente.telefono %>
 </p>
 
 <p>
   <strong>Empresa:</strong>
-  <%= @cotizacion.empresa %>
+  <%= @cotizacion.cliente.empresa %>
 </p>
 
 <p>
   <strong>Nit:</strong>
-  <%= @cotizacion.nit %>
+  <%= @cotizacion.cliente.nit %>
 </p>
 
 <p>
@@ -55,10 +55,10 @@
   <%= @cotizacion.total %>
 </p>
 
-<p>
-  <strong>Estado:</strong>
-  <%= @cotizacion.estado %>
-</p>
+<p> 
+<strong>Estado:</strong> 
+<%= mostrar_estado(@cotizacion.estado) %> 
+</p> 
 
-<%= link_to 'Edit', edit_cotizacion_path(@cotizacion) %> |
-<%= link_to 'Back', cotizacions_path %>
+<%= link_to 'Editar', edit_cotizacion_path(@cotizacion) %> |
+<%= link_to 'Atras', cotizacions_path %>
