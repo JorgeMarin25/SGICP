@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140814210750) do
+ActiveRecord::Schema.define(version: 20140825212616) do
 
   create_table "categoria", force: true do |t|
     t.string   "nombre"
@@ -144,5 +144,11 @@ ActiveRecord::Schema.define(version: 20140814210750) do
   end
 
   add_index "nominas", ["empleado_id"], name: "index_nominas_on_empleado_id"
+
+  create_table "salarios", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

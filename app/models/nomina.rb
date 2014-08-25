@@ -1,11 +1,14 @@
 class Nomina < ActiveRecord::Base
+
   belongs_to :empleado
+  belongs_to :salario   
+
+
 def self.search(search, page) where(['upper(empleado_id) like ?', 
      "%#{search}%".upcase]).paginate(page: page, per_page: 5).order("empleado_id") 
   end 
   # Validar que los atributos sean obligatorios
 	validates :empleado_id, :presence => true
-	validates :salariobasico, :presence => true
 	validates :horasextras, :presence => true
 	validates :recargosdiurnos, :presence => true
 	validates :recargosnocturnos, :presence => true

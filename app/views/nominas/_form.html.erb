@@ -17,9 +17,9 @@
 </div> 
 
   <div class="field">
-    <%= f.label :salariobasico %><br>
-    <%= f.number_field :salariobasico %>
-  </div>
+  <%= f.collection_select :salario_id, Salario.all, :id, :nombre, class: "form-control", prompt: "Seleccione un Salario" %>
+</div>
+
   <div class="field">
     <%= f.label :horasextras %><br>
     <%= f.number_field :horasextras %>
@@ -55,6 +55,6 @@
   
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar" %>
   </div>
 <% end %>

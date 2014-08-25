@@ -47,5 +47,6 @@ gem 'better_errors'
 gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
 gem 'quiet_assets'
 gem 'rails_layout'
+gem 'prawn_rails'
 end
 gem "binding_of_caller"

@@ -10,7 +10,17 @@ class NominasController < ApplicationController
   # GET /nominas/1
   # GET /nominas/1.json
   def show
-  end
+    @nomina = Nomina.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = NominaPdf.new(@nomina)
+        send_data pdf.render, filename: "nomina_#{@nomina_number}.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+           end
+        end
+      end        
 
   # GET /nominas/new
   def new
@@ -69,6 +79,6 @@ class NominasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def nomina_params
-      params.require(:nomina).permit(:salariobasico, :horasextras, :recargosdiurnos, :recargosnocturnos, :dominicales, :festivos, :comisiones, :diasnotrabajados, :horasnotrabajadas, :empleado_id)
+      params.require(:nomina).permit(:salario_id,:estado, :horasextras, :recargosdiurnos, :recargosnocturnos, :dominicales, :festivos, :comisiones, :diasnotrabajados, :horasnotrabajadas, :empleado_id)
     end
 end

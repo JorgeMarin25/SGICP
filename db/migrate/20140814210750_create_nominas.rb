@@ -1,6 +1,7 @@
 class CreateNominas < ActiveRecord::Migration
   def change
     create_table :nominas do |t|
+      t.boolean :estado
       t.integer :salariobasico
       t.integer :horasextras
       t.integer :recargosdiurnos
