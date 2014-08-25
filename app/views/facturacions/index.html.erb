@@ -43,9 +43,9 @@
         <td><%= facturacion.precio %></td>
         <td><%= facturacion.iva %></td>
         <td><%= facturacion.subtotal %></td>
-        <td><%= link_to 'Show', facturacion %></td>
-        <td><%= link_to 'Edit', edit_facturacion_path(facturacion) %></td>
-        <td><%= link_to 'Destroy', facturacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', facturacion %></td>
+        <td><%= link_to 'Editar', edit_facturacion_path(facturacion) %></td>
+        <td><%= link_to 'Eliminar', facturacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

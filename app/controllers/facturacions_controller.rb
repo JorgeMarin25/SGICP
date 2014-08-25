@@ -11,6 +11,17 @@ class FacturacionsController < ApplicationController
   # GET /facturacions/1
   # GET /facturacions/1.json
   def show
+    @facturacion = Facturacion.find(params[:id])
+    respond_to do |format|
+    format.html
+    format.pdf do
+    pdf = FacturacionPdf.new(@facturacion)
+    send_data pdf.render, filename: "Facturacion_#{@facturacion_number}.pdf",
+    type: "application/pdf",
+    disposition: "inline"
+end
+end
+
   end
 
   # GET /facturacions/new

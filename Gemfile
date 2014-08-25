@@ -49,3 +49,4 @@ gem 'quiet_assets'
 gem 'rails_layout'
 end
 gem "binding_of_caller"
+gem 'prawn_rails'
