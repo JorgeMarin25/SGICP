@@ -1,5 +1,5 @@
  <tr>
-         <td><%= link_to 'Pedido', cliente_cotizacions_path(cliente) %></td> 
+        <td><%= link_to 'Pedido', cliente_cotizacions_path(cliente) %></td> 
         <td><%= cliente.nombre %></td>
         <td><%= cliente.empresa %></td>
         <td><%= cliente.nit %></td>
@@ -10,6 +10,4 @@
         <td><%= link_to 'Ver', cliente %></td>
         <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
         <td><%= link_to 'Eliminar', cliente, method: :delete, data: { confirm: 'Esta seguro ?' } %></td>
-       
-        
 </tr>

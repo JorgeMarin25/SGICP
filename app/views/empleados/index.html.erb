@@ -31,35 +31,14 @@ Buscar:
     </tr>
   </thead>
 
-  <tbody>
-    <% @empleados.each do |empleado| %>
-      <tr>
-        <td><%= empleado.nombre %></td>
-        <td><%= empleado.doc %></td>
-        <td><%= empleado.estado.name %></td>
-        <td><%= empleado.direccion %></td>
-        <td><%= empleado.barrio %></td>
-        <td><%= empleado.ciudad %></td>
-        <td><%= empleado.telefono %></td>
-        <td><%= empleado.celular %></td>
-        <td><%= empleado.correo %></td>
-        <td><%= mostrar_genero(empleado.genero) %></td>
-        <td><%= empleado.fchinicio %></td>
-        <td><%= empleado.fchfinal %></td>
-        <td><%= empleado.cargo %></td>
-        <td><%= empleado.ref %></td>
-        <td><%= empleado.telref %></td>
-        <td><%= link_to 'Show', empleado %></td>
-        <td><%= link_to 'Edit', edit_empleado_path(empleado) %></td>
-        <td><%= link_to 'Destroy', empleado, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+  <tbody> 
+    <%= render @empleados %> 
+  </tbody> 
 </table>
 
 <br>
 
-<%= link_to 'Nuevo registro', new_empleado_path %>
+<%= link_to 'Nuevo', new_empleado_path, remote: true %> 
 
 <%= will_paginate @empleados, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
 <br>

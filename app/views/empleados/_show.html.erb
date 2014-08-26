@@ -1,0 +1,82 @@
+<div class='empleado'> 
+
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Nombre:</strong>
+    <%= @empleado.nombre %>
+  </p>
+
+  <p>
+    <strong>Doc:</strong>
+    <%= @empleado.doc %>
+  </p>
+
+  <p>
+    <strong>Estado:</strong>
+    <%= @empleado.estado %>
+  </p>
+
+  <p>
+    <strong>Direccion:</strong>
+    <%= @empleado.direccion %>
+  </p>
+
+  <p>
+    <strong>Barrio:</strong>
+    <%= @empleado.barrio %>
+  </p>
+
+  <p>
+    <strong>Ciudad:</strong>
+    <%= @empleado.ciudad %>
+  </p>
+
+  <p>
+    <strong>Telefono:</strong>
+    <%= @empleado.telefono %>
+  </p>
+
+  <p>
+    <strong>Celular:</strong>
+    <%= @empleado.celular %>
+  </p>
+
+  <p>
+    <strong>Correo:</strong>
+    <%= @empleado.correo %>
+  </p>
+
+  <p>
+    <strong>Genero:</strong>
+    <%= mostrar_genero(@empleado.genero) %>
+  </p>
+
+  <p>
+    <strong>Fchinicio:</strong>
+    <%= @empleado.fchinicio %>
+  </p>
+
+  <p>
+    <strong>Fchfinal:</strong>
+    <%= @empleado.fchfinal %>
+  </p>
+
+  <p>
+    <strong>Cargo:</strong>
+    <%= @empleado.cargo %>
+  </p>
+
+  <p>
+    <strong>Ref:</strong>
+    <%= @empleado.ref %>
+  </p>
+
+  <p>
+    <strong>Telref:</strong>
+    <%= @empleado.telref %>
+  </p>
+
+  <%= link_to 'Editar', edit_empleado_path(@empleado) %> |
+  <%= link_to 'Atras', empleados_path %>
+</div>

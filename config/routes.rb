@@ -19,6 +19,10 @@ Rails.application.routes.draw do
 
   resources :estudios
 
+  resources :estados
+
+
+
   get 'allcotizacions/', to: 'cotizacions#allcotizacions', as: 'cotizaciones'
 
 
