@@ -79,6 +79,6 @@ class NominasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def nomina_params
-      params.require(:nomina).permit(:salario_id,:estado, :horasextras, :recargosdiurnos, :recargosnocturnos, :dominicales, :festivos, :comisiones, :diasnotrabajados, :horasnotrabajadas, :empleado_id)
+      params.require(:nomina).permit(:salario_id, :horasextras, :recargosdiurnos, :recargosnocturnos, :dominicales, :festivos, :comisiones, :diasnotrabajados, :horasnotrabajadas, :empleado_id, :estado, :image)
     end
 end

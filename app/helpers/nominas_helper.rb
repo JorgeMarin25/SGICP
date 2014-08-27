@@ -1,10 +1,27 @@
 module NominasHelper
-	def salario(salario_id)
+	def salario(sa)
 
-		if salario_id == 2
-			"$616.027"
-		else salario_id == 3
-			"20.0000"
+		if sa == "Salario Diario"
+			"$20,533.33"
+		elsif sa == "Minimo Mensual"
+			"$616,000.00"
+		elsif  sa == "Salario Por Hora"	
+			"$4.500"
 		end
 	end
+
+	def estado(est)
+
+		if est
+			"<p class='text-success'> Activo </p>".html_safe
+		else
+			"<p class='text-danger'> Inactivo </p>".html_safe
+		end
+
+	end
+
+	def nombre(nom)
+		"<b> #{nom} </b>".html_safe
+	end
 end
+

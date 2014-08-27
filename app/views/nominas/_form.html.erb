@@ -52,7 +52,15 @@
     <%= f.label :horasnotrabajadas %><br>
     <%= f.number_field :horasnotrabajadas %>
   </div>
+  <div class="field">
+    <%= f.label :estado %><br>
+    <%= f.check_box :estado %>
+  </div>
   
+  <div class="field">
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+</div>
 
   <div class="actions">
     <%= f.submit "Guardar" %>
