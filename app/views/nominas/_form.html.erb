@@ -16,14 +16,12 @@
 "Seleccione empleado" %> 
 </div> 
 
-  <div class="field">
-  <%= f.collection_select :salario_id, Salario.all, :id, :nombre, class: "form-control", prompt: "Seleccione un Salario" %>
-</div>
 
   <div class="field">
     <%= f.label :horasextras %><br>
     <%= f.number_field :horasextras %>
   </div>
+  
   <div class="field">
     <%= f.label :recargosdiurnos %><br>
     <%= f.number_field :recargosdiurnos %>

@@ -5,13 +5,6 @@
 </p>
 
 <p>
-
-<p>
-  <strong>Salario:</strong>
-  <%= @nomina.salario.nombre %>
-</p>
-
-<p>
   <strong>Horas Extras:</strong>
   <%= @nomina.horasextras %>
 </p>
@@ -55,9 +48,10 @@
   <strong>Estado:</strong>
   <%= estado(@nomina.estado) %>
 </p>
-
+<div class="imagen">
 <%= image_tag @nomina.image.url(:medium) %>
+</div>
 <%= link_to 'Editar', edit_nomina_path(@nomina) %> |
 <%= link_to 'Atras', nominas_path %>
 
-<p><%= link_to 'Generar Constancias (PDF) ', nomina_path(@nomina, format: 'pdf')%></P> 
+<h5><%= link_to "Generar Constancias""(PDF)", nomina_path(@nomina, format: 'pdf')%></h5> 

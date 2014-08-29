@@ -5,9 +5,15 @@ class NominasController < ApplicationController
   # GET /nominas.json
   def index
     @nominas = Nomina.search(params[:search], params[:page]) 
+    respond_to do |format|
+    format.html
+    format.csv { send_data @nominas.to_csv }
+    format.xls # { send_data @nominas.to_csv(col_sep: "\t") }
   end
+end
 
-  # GET /nominas/1
+
+ # GET /nominas/1
   # GET /nominas/1.json
   def show
     @nomina = Nomina.find(params[:id])
@@ -79,6 +85,6 @@ class NominasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def nomina_params
-      params.require(:nomina).permit(:salario_id, :horasextras, :recargosdiurnos, :recargosnocturnos, :dominicales, :festivos, :comisiones, :diasnotrabajados, :horasnotrabajadas, :empleado_id, :estado, :image)
+      params.require(:nomina).permit(:horasextras, :recargosdiurnos, :recargosnocturnos, :dominicales, :festivos, :comisiones, :diasnotrabajados, :horasnotrabajadas, :empleado_id, :estado, :image)
     end
 end

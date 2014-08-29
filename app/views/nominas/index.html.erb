@@ -1,3 +1,4 @@
+<div class="pagina">
 <center><h1>Listado de Nomina</h1></center>
 
 <%= form_tag nominas_path, :method => 'get' do %> 
@@ -13,8 +14,11 @@ Buscar por:
     <tr>
       
       <th>Empleado</th>
-      <th colspan="3">Opciones</th>
+      <th colspan="3" class="config">Configuracion</th>
       <th>Estado</th>
+      <br>
+      <th class="foto">Foto</th>
+ 
       
     </tr>
   </thead>
@@ -40,7 +44,10 @@ Buscar por:
          %></td>
         <td><%= estado(nomina.estado) %></td>
 
+
+        
         <td><%= image_tag nomina.image.url(:thumb) %></td>
+       
 
         
       </tr>
@@ -57,12 +64,11 @@ Buscar por:
 <br> 
 Nominas: <%= @nominas.count %> 
 
-
-
-<p>
-  Download:
+<h5>
+  Descargar Formato:
   <%= link_to "CSV", nominas_path(format: "csv") %> |
   <%= link_to "Excel", nominas_path(format: "xls") %>
-</p>
+</h5>
 
+</div>
 

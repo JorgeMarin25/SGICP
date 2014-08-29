@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :salarios
 
   resources :nominas
 
@@ -18,8 +17,6 @@ Rails.application.routes.draw do
   resources :experiencia
 
   resources :estudios
-
-  resources :salarios
 
 
   # The priority is based upon order of creation: first created -> highest priority.

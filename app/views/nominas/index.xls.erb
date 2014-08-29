@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">Empleado</Data></Cell>
+        <Cell><Data ss:Type="integer">Horas_extras</Data></Cell>
+        <Cell><Data ss:Type="integer">Recargos_diurnos</Data></Cell>
+        <Cell><Data ss:Type="integer">Recargos_nocturnos</Data></Cell>
+        <Cell><Data ss:Type="integer">Dominicales</Data></Cell>
+        <Cell><Data ss:Type="integer">Festivos</Data></Cell>
+        <Cell><Data ss:Type="integer">Comisiones</Data></Cell>
+        <Cell><Data ss:Type="integer">Diasno_trabajados</Data></Cell>
+        <Cell><Data ss:Type="integer">Horasno_trabajadas</Data></Cell>
+        <Cell><Data ss:Type="boolean">Estado</Data></Cell>
+      </Row>
+    <% @nominas.each do |nomina| %>
+      <Row>
+        <Cell><Data ss:Type="String"><%=  nomina.empleado.nombre %></Data></Cell>
+        <Cell><Data ss:Type="integer"><%= nomina.horasextras %></Data></Cell>
+        <Cell><Data ss:Type="integer"><%= nomina.recargosdiurnos %></Data></Cell>
+        <Cell><Data ss:Type="integer"><%= nomina.recargosnocturnos %></Data></Cell>
+        <Cell><Data ss:Type="integer"><%= nomina.dominicales %></Data></Cell>
+        <Cell><Data ss:Type="integer"><%= nomina.festivos %></Data></Cell>
+        <Cell><Data ss:Type="integer"><%= nomina.comisiones %></Data></Cell>
+        <Cell><Data ss:Type="integer"><%= nomina.diasnotrabajados %></Data></Cell>
+        <Cell><Data ss:Type="integer"><%= nomina.horasnotrabajadas %></Data></Cell>
+        <Cell><Data ss:Type="boolean"><%= estado(nomina.estado) %></Data></Cell>
+
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
+

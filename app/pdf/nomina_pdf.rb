@@ -3,7 +3,6 @@ class NominaPdf < Prawn::Document
     super(top_margin: 70)
     @nomina = nomina
     empleado
-    sa
     horasextras
     recargosdiurnos
     recargosnocturnos
@@ -16,10 +15,6 @@ class NominaPdf < Prawn::Document
  def empleado
       text "Empleado: #{@nomina.empleado.nombre}", size: 20, style: :bold
    end	 
-
- def sa
-      text "Salario: #{@nomina.salario.nombre}", size: 15, style: :bold
-   end	  
 
  def horasextras
       text "Horas Extras: #{@nomina.horasextras}", size: 15, style: :bold
@@ -52,4 +47,5 @@ class NominaPdf < Prawn::Document
  def horasnotrabajadas
       text "Horas No Trabajadas: #{@nomina.horasnotrabajadas}", size: 15, style: :bold
    end     
+
 end
