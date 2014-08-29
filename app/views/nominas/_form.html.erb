@@ -16,14 +16,12 @@
 "Seleccione empleado" %> 
 </div> 
 
-  <div class="field">
-    <%= f.label :salariobasico %><br>
-    <%= f.number_field :salariobasico %>
-  </div>
+
   <div class="field">
     <%= f.label :horasextras %><br>
     <%= f.number_field :horasextras %>
   </div>
+  
   <div class="field">
     <%= f.label :recargosdiurnos %><br>
     <%= f.number_field :recargosdiurnos %>
@@ -52,9 +50,17 @@
     <%= f.label :horasnotrabajadas %><br>
     <%= f.number_field :horasnotrabajadas %>
   </div>
+  <div class="field">
+    <%= f.label :estado %><br>
+    <%= f.check_box :estado %>
+  </div>
   
+  <div class="field">
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+</div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar" %>
   </div>
 <% end %>

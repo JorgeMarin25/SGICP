@@ -1,6 +1,7 @@
 class CreateNominas < ActiveRecord::Migration
   def change
     create_table :nominas do |t|
+      
       t.integer :salariobasico
       t.integer :horasextras
       t.integer :recargosdiurnos
@@ -11,8 +12,10 @@ class CreateNominas < ActiveRecord::Migration
       t.integer :diasnotrabajados
       t.integer :horasnotrabajadas
       t.references :empleado, index: true
+      t.boolean :estado
 
       t.timestamps
     end
+    add_attachment :nominas, :image
   end
 end

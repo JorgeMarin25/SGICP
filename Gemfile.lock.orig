@@ -159,10 +159,13 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
+<<<<<<< HEAD
   jquery-ui-rails
   lazybox
+=======
   paperclip
   prawn_rails
+>>>>>>> 977c5b1a469416e725ef19fd809d196c411704f7
   quiet_assets
   rails (= 4.1.4)
   rails4-autocomplete

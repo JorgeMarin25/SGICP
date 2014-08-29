@@ -1,0 +1,13 @@
+<li><%= link_to "Categoria", categoria_path %></li>
+<li><%= link_to "Nomina", nominas_path %></li>
+<li><%= link_to "Clientes", clientes_path %></li>
+<li><%= link_to "Cotizaciones", cotizaciones_path %></li>
+<li><%= link_to "Estudios", estudios_path %></li>
+<li><%= link_to "Experiencias", experiencia_path %></li>
+<li><%= link_to "Facturaciones", facturacions_path %></li>
+<li><%= link_to "Inventario De insumos", inventarios_path %></li>
+<<<<<<< HEAD
+<li><%= link_to "estados", estados_path %></li>
+=======
+
+>>>>>>> 977c5b1a469416e725ef19fd809d196c411704f7
