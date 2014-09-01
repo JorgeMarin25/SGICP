@@ -70,6 +70,6 @@ class FacturacionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def facturacion_params
-      params.require(:facturacion).permit(:fecha, :fchven, :cotizacion, :cliente, :telefono, :empresa, :nit, :producto, :descripcion, :cantidad, :precio, :iva, :subtotal)
+      params.require(:facturacion).permit(:fecha, :fchven, :cotizacion_id, :cliente, :telefono, :empresa, :nit, :producto, :descripcion, :cantidad, :precio, :iva, :subtotal)
     end
 end

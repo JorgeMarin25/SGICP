@@ -1,7 +1,8 @@
 class Nomina < ActiveRecord::Base
 
   belongs_to :empleado
-  belongs_to :salario   
+  belongs_to :salario 
+  has_many :empleado   
 
 
 def self.search(search, page) where(['upper(empleado_id) like ?', 

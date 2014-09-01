@@ -60,5 +60,5 @@
 <%= mostrar_estado(@cotizacion.estado) %> 
 </p> 
 
-<%= link_to 'Editar', edit_cotizacion_path(@cotizacion) %> |
-<%= link_to 'Atras', cotizacions_path %>
+<%= link_to 'Editar', edit_cliente_cotizacion_path(@cliente,@cotizacion) %> |
+<%= link_to 'Atras', cliente_cotizacions_path(@cliente) %>

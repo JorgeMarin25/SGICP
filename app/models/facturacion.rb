@@ -5,7 +5,7 @@ class Facturacion < ActiveRecord::Base
 	# Validar que los atributos sean obligatorios
 	validates :fecha, :presence => true
 	validates :fchven, :presence => true
-	validates :cotizacion, :presence => true
+	validates :cotizacion_id, :presence => true
 	validates :cliente, :presence => true
 	validates :telefono, :presence => true
 	validates :empresa , :presence => true

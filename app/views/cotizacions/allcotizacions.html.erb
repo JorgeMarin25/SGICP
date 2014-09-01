@@ -11,6 +11,7 @@ Buscar por:
 <table class="table table-condensed">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Cliente</th>
       <th>Telefono</th>
       <th>Empresa</th>
@@ -30,6 +31,7 @@ Buscar por:
   <tbody>
     <% @cotizacions.each do |cotizacion| %>
       <tr>
+        <td><%= cotizacion.id %></td>
         <td><%= cotizacion.cliente.nombre %></td>
         <td><%= cotizacion.cliente.telefono %></td>
         <td><%= cotizacion.cliente.empresa %></td>

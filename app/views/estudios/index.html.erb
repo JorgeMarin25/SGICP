@@ -1,4 +1,4 @@
-<h1>Listing estudios</h1>
+<h1>Estudios</h1>
 
 <table class="table table-condensed">
   <thead>
@@ -20,9 +20,9 @@
         <td><%= estudio.fecha %></td>
         <td><%= estudio.lugar %></td>
         <td><%= estudio.empleado %></td>
-        <td><%= link_to 'Show', estudio %></td>
-        <td><%= link_to 'Edit', edit_estudio_path(estudio) %></td>
-        <td><%= link_to 'Destroy', estudio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'SVer', estudio %></td>
+        <td><%= link_to 'Editar', edit_estudio_path(estudio) %></td>
+        <td><%= link_to 'Eliminar', estudio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Estudio', new_estudio_path %>
+<%= link_to 'Nuevo Estudio', new_estudio_path %>

@@ -50,7 +50,6 @@ gem 'rails_layout'
 gem 'prawn_rails'
 gem 'paperclip' 
 end
-gem "binding_of_caller"
 gem 'lazybox' 
 
 gem 'rails4-autocomplete'

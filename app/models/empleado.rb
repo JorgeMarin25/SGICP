@@ -1,5 +1,6 @@
 class Empleado < ActiveRecord::Base
   belongs_to :estado
+  belongs_to :nomina 
 
   # Validar que los atributos sean obligatorios
 	validates :nombre, :presence => true

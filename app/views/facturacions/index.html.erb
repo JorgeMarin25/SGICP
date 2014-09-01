@@ -1,10 +1,10 @@
-<h1>Listing facturacions</h1>
+<h1>Facturaciones</h1>
 
 <%= form_tag clientes_path, :method => 'get' do %> 
   <% content_tag :label do %> 
-    Buscar: 
+    Buscar por cliente: 
     <%= text_field_tag :search, params[:search] %> 
-    <%= submit_tag "Buscar", :fecha => nil %> 
+    <%= submit_tag "Buscar", :telefono => nil %> 
   <% end %> 
 <% end %> 
 <table class="table table-condensed">
@@ -32,7 +32,7 @@
       <tr>
         <td><%= facturacion.fecha %></td>
         <td><%= facturacion.fchven %></td>
-        <td><%= facturacion.cotizacion %></td>
+        <td><%= facturacion.cotizacion_id %></td>
         <td><%= facturacion.cliente %></td>
         <td><%= facturacion.telefono %></td>
         <td><%= facturacion.empresa %></td>
@@ -43,9 +43,9 @@
         <td><%= facturacion.precio %></td>
         <td><%= facturacion.iva %></td>
         <td><%= facturacion.subtotal %></td>
-        <td><%= link_to 'Show', facturacion %></td>
-        <td><%= link_to 'Edit', edit_facturacion_path(facturacion) %></td>
-        <td><%= link_to 'Destroy', facturacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', facturacion %></td>
+        <td><%= link_to 'Editar', edit_facturacion_path(facturacion) %></td>
+        <td><%= link_to 'Eliminar', facturacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -54,6 +54,8 @@
 <br>
 
 <%= link_to 'New Facturacion', new_facturacion_path %>
+
+
 <%= will_paginate @facturacions, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
 &raquo;' %> 
 <br> 

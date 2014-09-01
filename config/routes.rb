@@ -12,9 +12,9 @@ Rails.application.routes.draw do
      resources :cotizacions
   end
 
-  resources :categoria
-
-  resources :empleados
+  resources :empleados do
+      resources :nominas
+  end
 
   resources :experiencia
 
