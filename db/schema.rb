@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140827211129) do
+ActiveRecord::Schema.define(version: 20140814210750) do
 
   create_table "categoria", force: true do |t|
     t.string   "nombre"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20140827211129) do
   end
 
   create_table "cotizacions", force: true do |t|
-    t.integer  "cliente_id"
+    t.string   "cliente_id"
     t.string   "producto"
     t.text     "descripcion"
     t.string   "cantidad"
@@ -63,7 +63,6 @@ ActiveRecord::Schema.define(version: 20140827211129) do
     t.string   "telref"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "nomina_id"
   end
 
   add_index "empleados", ["estado_id"], name: "index_empleados_on_estado_id"
@@ -104,7 +103,7 @@ ActiveRecord::Schema.define(version: 20140827211129) do
   create_table "facturacions", force: true do |t|
     t.date     "fecha"
     t.date     "fchven"
-    t.string   "cotizacion_id"
+    t.string   "cotizacion"
     t.string   "cliente"
     t.string   "telefono"
     t.string   "empresa"
@@ -137,6 +136,7 @@ ActiveRecord::Schema.define(version: 20140827211129) do
     t.integer  "diasnotrabajados"
     t.integer  "horasnotrabajadas"
     t.integer  "empleado_id"
+    t.boolean  "estado"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"

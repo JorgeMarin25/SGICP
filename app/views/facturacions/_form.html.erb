@@ -19,14 +19,21 @@
     <%= f.label :fchven %><br>
     <%= f.date_select :fchven %>
   </div>
+
   <div class="field"> 
-    Cotizacion: <br> <%= f.collection_select :cotizacion_id, Cotizacion.all, :id, :id, class: "form­control", prompt: 
-    "Seleccione Id de la cotizacion" %> 
-  </div> 
-  <div class="field">
-    <%= f.label :cliente %><br>
-    <%= f.text_field :cliente %>
-  </div>
+   Cotizacion: <br> <%= f.collection_select :cotizacion_id, Cotizacion.all, :id, :id, class: 
+     "form­control", prompt: 
+     "Seleccione ID de la cotizacion" %> 
+  </div>  
+
+
+ <div class="field"> 
+   Cliente: <br> <%= f.collection_select :cliente_id, Cliente.all, :id, :nombre, class: 
+     "form­control", prompt: 
+     "Seleccione cliente" %> 
+  </div>  
+
+
 
   <div class="field">
     <%= f.label :telefono %><br>

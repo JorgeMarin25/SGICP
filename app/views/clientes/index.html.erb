@@ -2,7 +2,7 @@
 
 <%= form_tag clientes_path, :method => 'get' do %>
 <% content_tag :label do %>
-Search term:
+Buscar :
 <%= text_field_tag :search, params[:search] %>
 <%= submit_tag "Buscar", :nombre=> nil %>
 <% end %>

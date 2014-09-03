@@ -33,7 +33,7 @@
         <td><%= facturacion.fecha %></td>
         <td><%= facturacion.fchven %></td>
         <td><%= facturacion.cotizacion_id %></td>
-        <td><%= facturacion.cliente %></td>
+        <td><%= facturacion.cliente_id %></td>
         <td><%= facturacion.telefono %></td>
         <td><%= facturacion.empresa %></td>
         <td><%= facturacion.nit %></td>
@@ -45,7 +45,7 @@
         <td><%= facturacion.subtotal %></td>
         <td><%= link_to 'Ver', facturacion %></td>
         <td><%= link_to 'Editar', edit_facturacion_path(facturacion) %></td>
-        <td><%= link_to 'Eliminar', facturacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Eliminar', facturacion, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>

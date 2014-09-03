@@ -1,6 +1,7 @@
 class Cotizacion < ActiveRecord::Base
 
 	belongs_to :cliente
+	has_many :facturacions
 
 
 	# Validar que los atributos sean obligatorios
