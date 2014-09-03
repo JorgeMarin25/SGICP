@@ -1,4 +1,5 @@
-<%= form_for (@empleado), :html   =>   {   :class   =>   'form­horizontal',   remote:   true   } ) do |f| %>
+<div class="formuemple">
+<%=   simple_form_for(@empleado,   :html   =>   {   :class   =>   'form­horizontal',   remote:   true   }   )   do   |f|  %> 
   <% if @empleado.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@empleado.errors.count, "error") %> prohibited this empleado from being saved:</h2>
@@ -80,6 +81,7 @@
   <div class="col­sm­offset­2 col­sm­10"> 
 
   <div class="actions">
-    <%= f.submit "Guardar", class: "btn btn­sm btn­success" %>
+    <%= f.submit "Guardar", :class => "btn btn­-info" %>
   </div>
 <% end %>
+</div>

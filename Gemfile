@@ -54,3 +54,4 @@ gem 'lazybox'
 
 gem 'rails4-autocomplete'
 gem 'jquery-ui-rails'
+gem 'simple_form'

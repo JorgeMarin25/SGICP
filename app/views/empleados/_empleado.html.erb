@@ -16,6 +16,6 @@
         <td><%= empleado.telref %></td>
         <td><%= link_to 'Mostrar', empleado, remote: true  %></td> 
         <td><%= link_to 'Editar', edit_empleado_path(empleado), remote: true %></td> 
-        <td><%=  link_to   'Eliminar',   empleado,   method:   :delete,   data:   {   confirm:   'Esta   Seguro?' }  
+        <td><%=  link_to   'Eliminar',   empleado,   method:   :delete,   data:   {   confirm:   'Esta   Seguro?' , remote: true}  
 %></td> 
 </tr> 

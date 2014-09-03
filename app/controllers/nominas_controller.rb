@@ -1,4 +1,6 @@
 class NominasController < ApplicationController
+
+
   before_action :set_nomina, only: [:show, :edit, :update, :destroy]
 
   # GET /nominas
@@ -76,6 +78,8 @@ end
       format.json { head :no_content }
     end
   end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
