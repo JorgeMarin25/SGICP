@@ -11,15 +11,6 @@ def self.search(search, page) where(['upper(empleado_id) like ?',
 
 
 
-def self.to_csv(options = {})
-  CSV.generate(options) do |csv|
-    csv << column_names
-    all.each do |nomina|
-      csv << nomina.attributes.values_at(*column_names)
-    end
-  end
-end
-
 
   # Validar que los atributos sean obligatorios
 	validates :empleado_id, :presence => true

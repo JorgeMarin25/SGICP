@@ -17,7 +17,6 @@ class Empleado < ActiveRecord::Base
 	validates :correo, :presence => true
 	validates :fchinicio, :presence => true
 	validates :fchfinal, :presence => true
-	validates :cargo, :presence => true
 	validates :ref, :presence => true
 	validates :telref, :presence => true
 	# validar que un atributos unicos
@@ -26,7 +25,7 @@ class Empleado < ActiveRecord::Base
 	validates :correo, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i,
 	message: 'Formato no valido' }
 			
-
+	 	
 def self.search(search, page)
 	where(['upper(nombre) like ?',
 	"%#{search}%".upcase]).paginate(page: page, per_page: 5).order("nombre")

@@ -1,0 +1,69 @@
+<%= form_for(@novedade) do |f| %>
+  <% if @novedade.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@novedade.errors.count, "error") %> prohibited this novedade from being saved:</h2>
+
+      <ul>
+      <% @novedade.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fechavacaciones %><br>
+    <%= f.date_select :fechavacaciones %>
+  </div>
+  <div class="field">
+    <%= f.label :finvacaciones %><br>
+    <%= f.date_select :finvacaciones %>
+  </div>
+  <div class="field">
+    <%= f.label :cesantias %><br>
+    <%= f.number_field :cesantias %>
+  </div>
+  <div class="field">
+    <%= f.label :primalegal %><br>
+    <%= f.number_field :primalegal %>
+  </div>
+  <div class="field">
+    <%= f.label :primavacaciones %><br>
+    <%= f.number_field :primavacaciones %>
+  </div>
+  <div class="field">
+    <%= f.label :sueldobasico %><br>
+    <%= f.number_field :sueldobasico %>
+  </div>
+  <div class="field">
+    <%= f.label :horasextras %><br>
+    <%= f.number_field :horasextras %>
+  </div>
+  <div class="field">
+    <%= f.label :recargosdiurnos %><br>
+    <%= f.number_field :recargosdiurnos %>
+  </div>
+  <div class="field">
+    <%= f.label :dominicales %><br>
+    <%= f.number_field :dominicales %>
+  </div>
+  <div class="field">
+    <%= f.label :festivos %><br>
+    <%= f.number_field :festivos %>
+  </div>
+  <div class="field">
+    <%= f.label :comiciones %><br>
+    <%= f.number_field :comiciones %>
+  </div>
+  <div class="field">
+    <%= f.label :diasnotrabajados %><br>
+    <%= f.number_field :diasnotrabajados %>
+  </div>
+  <div class="field">
+    <%= f.label :horasnotrabajadas %><br>
+    <%= f.number_field :horasnotrabajadas %>
+  </div>
+  <div class="actions">
+    <%= f.submit  "Guardar" %>
+  </div>
+<% end %>

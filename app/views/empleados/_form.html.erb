@@ -69,7 +69,10 @@
   </div>
   
   <div class="field">
-    <%= f.label :referencia %><br>
+   <%= f.collection_select :cargo_id, Cargo.all, :id, :nombre, class: "form-control", prompt: "Cargo" %>
+  </div>
+  <div class="field">
+    <%= f.label :ref %><br>
     <%= f.text_field :ref %>
   </div>
   <div class="field">

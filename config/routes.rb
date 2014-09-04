@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'user_sessions/destroy'
 
   resources :users
+resources :novedades
 
   resources :cargos
 
