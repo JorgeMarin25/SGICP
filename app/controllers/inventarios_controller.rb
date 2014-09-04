@@ -10,6 +10,16 @@ class InventariosController < ApplicationController
   # GET /inventarios/1
   # GET /inventarios/1.json
   def show
+    @inventario = Inventario.find(params[:id])
+    respond_to do |format|
+    format.html
+    format.pdf do
+    pdf = InventarioPdf.new(@inventario)
+    send_data pdf.render, filename: "Inventario_#{@inventario_number}.pdf",
+    type: "application/pdf",
+    disposition: "inline"
+end
+end
   end
 
   # GET /inventarios/new

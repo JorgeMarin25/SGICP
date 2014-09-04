@@ -7,6 +7,16 @@ class CotizacionsController < ApplicationController
   end
 
   def show
+   @cotizacion = Cotizacion.find(params[:id])
+    respond_to do |format|
+    format.html
+    format.pdf do
+    pdf = CotizacionPdf.new(@cotizacion)
+    send_data pdf.render, filename: "cotizacion_#{@cotizacion_number}.pdf",
+    type: "application/pdf",
+    disposition: "inline"
+  end
+end
   end
 
   def new
