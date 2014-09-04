@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'user_sessions/new'
+
+  get 'user_sessions/create'
+
+  get 'user_sessions/destroy'
+
+  resources :users
+
   resources :cargos
 
   resources :nominas
@@ -35,6 +43,12 @@ Rails.application.routes.draw do
   resources :estados
 
   resources :cargos
+
+  resources :user_sessions 
+  resources :users 
+ 
+  get 'login', to:'user_sessions#new', :as => :login 
+  get 'logout', to: 'user_sessions#destroy', :as => :logout 
 
 
 

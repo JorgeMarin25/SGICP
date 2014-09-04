@@ -37,7 +37,7 @@ end
   # POST /facturacions.json
   def create
     @facturacion = Facturacion.new(facturacion_params)
-
+    
     respond_to do |format|
       if @facturacion.save
         format.html { redirect_to @facturacion, notice: 'Facturacion was successfully created.' }

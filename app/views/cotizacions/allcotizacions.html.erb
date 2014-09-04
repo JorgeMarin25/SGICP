@@ -44,7 +44,7 @@ Buscar por:
         <td><%= cotizacion.subtotal %></td>
         <td><%= cotizacion.total %></td>
         <td><%= cotizacion.estado %></td>
-        <td><%= link_to 'Ver', cliente_cotizacions_path(cotizacion.cliente,cotizacion) %></td>
+        <td><%= link_to 'Ver', cliente_cotizacion_path(cotizacion.cliente,cotizacion) %></td>
         <td><%= link_to 'Editar', edit_cliente_cotizacion_path(cotizacion.cliente,cotizacion) %></td>
         <td><%= link_to 'Eliminar', cliente_cotizacion_path(cotizacion.cliente,cotizacion) , method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
