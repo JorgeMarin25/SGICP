@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :cargos
+
   resources :nominas
 
   resources :inventarios
@@ -13,14 +15,26 @@ Rails.application.routes.draw do
   end
 
   resources :empleados do
+      resources :experiencia
+  end
+
+  resources :empleados do
+      resources :estudios
+  end
+
+  resources :empleados do
       resources :nominas
   end
+
+
 
   resources :experiencia
 
   resources :estudios
 
   resources :estados
+
+  resources :cargos
 
 
 

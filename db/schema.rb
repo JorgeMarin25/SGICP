@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140814210750) do
+ActiveRecord::Schema.define(version: 20140904161129) do
+
+  create_table "cargos", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categoria", force: true do |t|
     t.string   "nombre"
@@ -58,14 +64,12 @@ ActiveRecord::Schema.define(version: 20140814210750) do
     t.boolean  "genero"
     t.date     "fchinicio"
     t.date     "fchfinal"
-    t.string   "cargo"
+    t.string   "cargo_id"
     t.string   "ref"
     t.string   "telref"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "empleados", ["estado_id"], name: "index_empleados_on_estado_id"
 
   create_table "estados", force: true do |t|
     t.string   "name"
@@ -103,8 +107,8 @@ ActiveRecord::Schema.define(version: 20140814210750) do
   create_table "facturacions", force: true do |t|
     t.date     "fecha"
     t.date     "fchven"
-    t.string   "cotizacion"
-    t.string   "cliente"
+    t.integer  "cotizacion_id"
+    t.integer  "cliente_id"
     t.string   "telefono"
     t.string   "empresa"
     t.string   "nit"

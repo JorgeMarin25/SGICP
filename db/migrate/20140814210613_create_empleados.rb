@@ -13,7 +13,7 @@ class CreateEmpleados < ActiveRecord::Migration
       t.boolean :genero
       t.date :fchinicio
       t.date :fchfinal
-      t.string :cargo
+      t.references :cargo
       t.string :ref
       t.string :telref
 
