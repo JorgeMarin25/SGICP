@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :novedades
+
   resources :cargos
 
   resources :nominas
@@ -35,7 +37,7 @@ Rails.application.routes.draw do
   resources :estados
 
   resources :cargos
-
+  
 
 
   get 'allcotizacions/', to: 'cotizacions#allcotizacions', as: 'cotizaciones'

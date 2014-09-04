@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140904161129) do
+ActiveRecord::Schema.define(version: 20140904173501) do
 
   create_table "cargos", force: true do |t|
     t.string   "nombre"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20140904161129) do
   create_table "empleados", force: true do |t|
     t.string   "nombre"
     t.string   "doc"
+    t.boolean  "estado"
     t.integer  "estado_id"
     t.string   "direccion"
     t.string   "barrio"
@@ -64,12 +65,14 @@ ActiveRecord::Schema.define(version: 20140904161129) do
     t.boolean  "genero"
     t.date     "fchinicio"
     t.date     "fchfinal"
-    t.string   "cargo_id"
+    t.integer  "cargo_id"
     t.string   "ref"
     t.string   "telref"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "empleados", ["estado_id"], name: "index_empleados_on_estado_id"
 
   create_table "estados", force: true do |t|
     t.string   "name"
@@ -107,8 +110,8 @@ ActiveRecord::Schema.define(version: 20140904161129) do
   create_table "facturacions", force: true do |t|
     t.date     "fecha"
     t.date     "fchven"
-    t.integer  "cotizacion_id"
-    t.integer  "cliente_id"
+    t.string   "cotizacion"
+    t.string   "cliente"
     t.string   "telefono"
     t.string   "empresa"
     t.string   "nit"
@@ -150,5 +153,23 @@ ActiveRecord::Schema.define(version: 20140904161129) do
   end
 
   add_index "nominas", ["empleado_id"], name: "index_nominas_on_empleado_id"
+
+  create_table "novedades", force: true do |t|
+    t.date     "fechavacaciones"
+    t.date     "finvacaciones"
+    t.integer  "cesantias"
+    t.integer  "primalegal"
+    t.integer  "primavacaciones"
+    t.integer  "sueldobasico"
+    t.integer  "horasextras"
+    t.integer  "recargosdiurnos"
+    t.integer  "dominicales"
+    t.integer  "festivos"
+    t.integer  "comiciones"
+    t.integer  "diasnotrabajados"
+    t.integer  "horasnotrabajadas"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

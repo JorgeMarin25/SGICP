@@ -13,11 +13,6 @@
   </p>
 
   <p>
-    <strong>Estado:</strong>
-    <%= @empleado.estado %>
-  </p>
-
-  <p>
     <strong>Direccion:</strong>
     <%= @empleado.direccion %>
   </p>
@@ -81,6 +76,7 @@
   <strong>Estado:</strong>
   <%= estado(@empleado.estado) %>
 </p>
+
 
   <%= link_to 'Editar', edit_empleado_path(@empleado) %> |
   <%= link_to 'Atras', empleados_path %>

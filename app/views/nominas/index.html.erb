@@ -37,16 +37,13 @@
   </tbody>
 </table>
 
-<br>
+<p>
 
-<br> 
-Nominas: <%= @nominas.count %> 
-
-<h5>
-  Descargar Formato:
-  <%= link_to "CSV", nominas_path(format: "csv") %> |
-  <%= link_to "Excel", nominas_path(format: "xls") %>
-</h5>
+  <center><%= link_to "CSV", novedades_path(format: 'csv') %> |
+  <%= link_to "Excel", novedades_path(format: 'xls') %></center>
+</p>
 
 </div>
+
+
 

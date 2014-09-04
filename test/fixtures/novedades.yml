@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fechavacaciones: 2014-09-04
+  finvacaciones: 2014-09-04
+  cesantias: 1
+  primalegal: 1
+  primavacaciones: 1
+  sueldobasico: 1
+  horasextras: 1
+  recargosdiurnos: 1
+  dominicales: 1
+  festivos: 1
+  comiciones: 1
+  diasnotrabajados: 1
+  horasnotrabajadas: 1
+
+two:
+  fechavacaciones: 2014-09-04
+  finvacaciones: 2014-09-04
+  cesantias: 1
+  primalegal: 1
+  primavacaciones: 1
+  sueldobasico: 1
+  horasextras: 1
+  recargosdiurnos: 1
+  dominicales: 1
+  festivos: 1
+  comiciones: 1
+  diasnotrabajados: 1
+  horasnotrabajadas: 1

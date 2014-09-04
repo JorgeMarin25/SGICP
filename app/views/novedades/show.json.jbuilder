@@ -1,0 +1,1 @@
+json.extract! @novedade, :id, :fechavacaciones, :finvacaciones, :cesantias, :primalegal, :primavacaciones, :sueldobasico, :horasextras, :recargosdiurnos, :dominicales, :festivos, :comiciones, :diasnotrabajados, :horasnotrabajadas, :created_at, :updated_at
