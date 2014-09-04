@@ -7,6 +7,7 @@ class NominasController < ApplicationController
   # GET /nominas.json
   def index
     @nominas = Nomina.search(params[:search], params[:page]) 
+    @empleados = Empleado.all
     respond_to do |format|
     format.html
     format.csv { send_data @nominas.to_csv }

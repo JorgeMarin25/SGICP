@@ -1,0 +1,25 @@
+<h1>Empleados</h1>
+
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Documento</th>
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody> 
+    <%  @empleados.each do |empleado| %> 
+          <tr id=<%= "empleado_#{empleado.id}" %>> 
+              <td><%= empleado.nombre %></td>
+              <td><%= empleado.doc %></td>
+              
+          </td> 
+          </tr> 
+  <% end %>
+  </tbody> 
+</table>
+
+<br>
