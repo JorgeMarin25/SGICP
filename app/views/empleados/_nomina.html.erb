@@ -15,8 +15,10 @@
     <%  @empleados.each do |empleado| %> 
           <tr id=<%= "empleado_#{empleado.id}" %>> 
               <td><%= empleado.nombre %></td>
-              <td><%= empleado.doc %></td>        
-              <td><%= link_to 'Registrar Novedad', new_novedade_path %></td> 
+              <td><%= empleado.doc %></td>
+                
+              <td><%= link_to 'Registrar Novedad', new_novedade_path %></td>
+              
           </td> 
           </tr> 
   <% end %>

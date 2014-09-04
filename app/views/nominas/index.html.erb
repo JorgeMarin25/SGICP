@@ -8,26 +8,6 @@
       <tr>
 
         
-      
-        <td><%= nomina.empleado.nombre %></td>
-        <td><%=
-          if nomina.estado == true
-            button_to 'Ver', nomina, :method => "get", class: "btn btn-primary"
-          else
-            button_to 'Ver', nomina, class: "btn btn-primary disabled", :method => "get"
-          end  %></td>
-        <td><%= button_to 'Editar', edit_nomina_path(nomina), :method => "get", class: "btn btn-success" %></td>
-        <td><%=
-          if nomina.estado == true
-          button_to 'Eliminar', nomina, method: :delete, data: { confirm: 'Esta Seguro, Esto No Se Puede Reponer?' }, :method => "delete", class: "btn btn-danger"
-          else
-            button_to 'Eliminar', nomina, method: :delete, data: { confirm: 'Esta Seguro, Esto No Se Puede Reponer?' }, :method => "delete", class: "btn btn-danger disabled"
-          end
-         %></td>
-        <td><%= estado(nomina.estado) %></td>
-
-
-        
         <td><%= image_tag nomina.image.url(:thumb) %></td>
        
 
