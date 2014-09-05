@@ -1,4 +1,4 @@
-<h1>Empleados</h1>
+<center><h1>Empleados</h1></center>
 
 <%= form_tag empleados_path, :method => 'get' do %>
 <% content_tag :label do %>
@@ -14,21 +14,8 @@ Buscar por nombre:
     <tr>
       <th>Nombre</th>
       <th>Documento</th>
-      <th>Estado</th>
-      <th>Direccion</th>
-      <th>Barrio</th>
-      <th>Ciudad</th>
-      <th>Telefono</th>
-      <th>Celular</th>
-      <th>Correo</th>
-      <th>Genero</th>
-      <th>Fecha inicio</th>
-      <th>Fecha final</th>
       <th>Cargo</th>
-      <th>Referencia</th>
-      <th>Telefono referencia</th>
-      <th>Image</th>
-      <th colspan="3"></th>
+      <th colspan="3">Opciones</th>
     </tr>
   </thead>
 
@@ -37,11 +24,13 @@ Buscar por nombre:
 
   </tbody> 
 </table>
+
 <br>
 
- 
+
 <%= link_to 'Nuevo Empleado', new_empleado_path, remote: true %> 
-    
+<br>
 
 <%= will_paginate @empleados, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
 <br>
+
