@@ -5,15 +5,13 @@ class NovedadesController < ApplicationController
   # GET /novedades.json
 
 def index
-  @novedades = Novedade.order(:fechavacaciones)
+  @novedades = Novedade.all
   respond_to do |format|
     format.html
     format.csv { send_data @novedades.to_csv }
-    format.xls { send_data @novedades.to_csv(col_sep: "\t") }
- 
+    format.xls # { send_data @novedades.to_xls(col_sep: "\t") }
   end
 end
-
 
 
   # GET /novedades/1
@@ -78,6 +76,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def novedade_params
-      params.require(:novedade).permit(:fechavacaciones, :finvacaciones, :cesantias, :primalegal, :primavacaciones, :sueldobasico, :horasextras, :recargosdiurnos, :dominicales, :festivos, :comiciones, :diasnotrabajados, :horasnotrabajadas)
+      params.require(:novedade).permit(:iniciovacaciones, :finvacaciones, :prendasrealizadas, :valorprenda, :sueldobasico, :primalegal, :festivostrabajados, :diasnotrabajados, :horasnotrabajadas)
     end
 end

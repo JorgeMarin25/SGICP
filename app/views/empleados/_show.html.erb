@@ -77,10 +77,11 @@
     <%= @empleado.telref %>
   </p>
 
-  <p>
+   <p>
   <strong>Estado:</strong>
-  <%= estado(@empleado.estado) %>
+  <%= est(@empleado.activo) %>
 </p>
+
 
   <%= link_to 'Editar', edit_empleado_path(@empleado) %> |
   <%= link_to 'Atras', empleados_path %>

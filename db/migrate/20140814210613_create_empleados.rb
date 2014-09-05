@@ -17,8 +17,10 @@ class CreateEmpleados < ActiveRecord::Migration
       t.references :cargo
       t.string :ref
       t.string :telref
+      t.boolean :activo
 
       t.timestamps
     end
+
   end
 end

@@ -1,57 +1,9 @@
 <p id="notice"><%= notice %></p>
-<p>
-  <strong>Empleado:</strong>
-  <%= @nomina.empleado.nombre %>
-</p>
 
 <p>
-  <strong>Horas Extras:</strong>
-  <%= @nomina.horasextras %>
+  <strong>Nombre:</strong>
+  <%= @nomina.nombre %>
 </p>
 
-<p>
-  <strong>Recargos Diurnos:</strong>
-  <%= @nomina.recargosdiurnos %>
-</p>
-
-<p>
-  <strong>Recargos Nocturnos:</strong>
-  <%= @nomina.recargosnocturnos %>
-</p>
-
-<p>
-  <strong>Dominicales:</strong>
-  <%= @nomina.dominicales %>
-</p>
-
-<p>
-  <strong>Festivos:</strong>
-  <%= @nomina.festivos %>
-</p>
-
-<p>
-  <strong>Comisiones:</strong>
-  <%= @nomina.comisiones %>
-</p>
-
-<p>
-  <strong>Dias no Trabajados:</strong>
-  <%= @nomina.diasnotrabajados %>
-</p>
-
-<p>
-  <strong>Horas no Trabajadas:</strong>
-  <%= @nomina.horasnotrabajadas %>
-</p>
-
-<p>
-  <strong>Estado:</strong>
-  <%= estado(@nomina.estado) %>
-</p>
-<div class="imagen">
-<%= image_tag @nomina.image.url(:medium) %>
-</div>
-<%= link_to 'Editar', edit_nomina_path(@nomina) %> |
-<%= link_to 'Atras', nominas_path %>
-
-<h5><%= link_to "Generar Constancias""(PDF)", nomina_path(@nomina, format: 'pdf')%></h5> 
+<%= link_to 'Edit', edit_nomina_path(@nomina) %> |
+<%= link_to 'Back', nominas_path %>

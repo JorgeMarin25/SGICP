@@ -1,25 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  salariobasico: 1
-  horasextras: 1
-  recargosdiurnos: 1
-  recargosnocturnos: 1
-  dominicales: 1
-  festivos: 1
-  comisiones: 1
-  diasnotrabajados: 1
-  horasnotrabajadas: 1
-  empleado_id: 
+  nombre: MyString
 
 two:
-  salariobasico: 1
-  horasextras: 1
-  recargosdiurnos: 1
-  recargosnocturnos: 1
-  dominicales: 1
-  festivos: 1
-  comisiones: 1
-  diasnotrabajados: 1
-  horasnotrabajadas: 1
-  empleado_id: 
+  nombre: MyString

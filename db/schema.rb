@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140904195103) do
+ActiveRecord::Schema.define(version: 20140905212643) do
 
   create_table "cargos", force: true do |t|
     t.string   "nombre"
@@ -69,9 +69,12 @@ ActiveRecord::Schema.define(version: 20140904195103) do
     t.string   "telref"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "activo"
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
   end
-
-  add_index "empleados", ["estado_id"], name: "index_empleados_on_estado_id"
 
   create_table "estados", force: true do |t|
     t.string   "name"
@@ -109,8 +112,8 @@ ActiveRecord::Schema.define(version: 20140904195103) do
   create_table "facturacions", force: true do |t|
     t.date     "fecha"
     t.date     "fchven"
-    t.integer  "cotizacion_id"
-    t.integer  "cliente_id"
+    t.string   "cotizacion"
+    t.string   "cliente"
     t.string   "telefono"
     t.string   "empresa"
     t.string   "nit"
@@ -132,45 +135,26 @@ ActiveRecord::Schema.define(version: 20140904195103) do
   end
 
   create_table "nominas", force: true do |t|
-    t.integer  "salariobasico"
-    t.integer  "horasextras"
-    t.integer  "recargosdiurnos"
-    t.integer  "recargosnocturnos"
-    t.integer  "dominicales"
-    t.integer  "festivos"
-    t.integer  "comisiones"
-    t.integer  "diasnotrabajados"
-    t.integer  "horasnotrabajadas"
-    t.integer  "empleado_id"
-    t.boolean  "estado"
+    t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
   end
-
-  add_index "nominas", ["empleado_id"], name: "index_nominas_on_empleado_id"
 
   create_table "novedades", force: true do |t|
-    t.date     "fechavacaciones"
+    t.date     "iniciovacaciones"
     t.date     "finvacaciones"
-    t.integer  "cesantias"
-    t.integer  "primalegal"
-    t.integer  "primavacaciones"
+    t.integer  "prendasrealizadas"
+    t.integer  "valorprenda"
     t.integer  "sueldobasico"
-    t.integer  "horasextras"
-    t.integer  "recargosdiurnos"
-    t.integer  "dominicales"
-    t.integer  "festivos"
-    t.integer  "comiciones"
+    t.integer  "primalegal"
+    t.integer  "festivostrabajados"
     t.integer  "diasnotrabajados"
     t.integer  "horasnotrabajadas"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-create_table "users", force: true do |t|
+
+  create_table "users", force: true do |t|
     t.string   "email",            null: false
     t.string   "crypted_password", null: false
     t.string   "salt",             null: false

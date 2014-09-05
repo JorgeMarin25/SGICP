@@ -12,48 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :fechavacaciones %><br>
-    <%= f.date_select :fechavacaciones %>
+    <%= f.label :iniciovacaciones %><br>
+    <%= f.date_select :iniciovacaciones %>
   </div>
   <div class="field">
     <%= f.label :finvacaciones %><br>
     <%= f.date_select :finvacaciones %>
   </div>
   <div class="field">
-    <%= f.label :cesantias %><br>
-    <%= f.number_field :cesantias %>
+    <%= f.label :prendasrealizadas %><br>
+    <%= f.number_field :prendasrealizadas %>
   </div>
   <div class="field">
-    <%= f.label :primalegal %><br>
-    <%= f.number_field :primalegal %>
-  </div>
-  <div class="field">
-    <%= f.label :primavacaciones %><br>
-    <%= f.number_field :primavacaciones %>
+    <%= f.label :valorprenda %><br>
+    <%= f.number_field :valorprenda %>
   </div>
   <div class="field">
     <%= f.label :sueldobasico %><br>
     <%= f.number_field :sueldobasico %>
   </div>
   <div class="field">
-    <%= f.label :horasextras %><br>
-    <%= f.number_field :horasextras %>
+    <%= f.label :primalegal %><br>
+    <%= f.number_field :primalegal %>
   </div>
   <div class="field">
-    <%= f.label :recargosdiurnos %><br>
-    <%= f.number_field :recargosdiurnos %>
-  </div>
-  <div class="field">
-    <%= f.label :dominicales %><br>
-    <%= f.number_field :dominicales %>
-  </div>
-  <div class="field">
-    <%= f.label :festivos %><br>
-    <%= f.number_field :festivos %>
-  </div>
-  <div class="field">
-    <%= f.label :comiciones %><br>
-    <%= f.number_field :comiciones %>
+    <%= f.label :festivostrabajados %><br>
+    <%= f.number_field :festivostrabajados %>
   </div>
   <div class="field">
     <%= f.label :diasnotrabajados %><br>
@@ -64,6 +48,6 @@
     <%= f.number_field :horasnotrabajadas %>
   </div>
   <div class="actions">
-    <%= f.submit  "Guardar" %>
+    <%= f.submit %>
   </div>
 <% end %>

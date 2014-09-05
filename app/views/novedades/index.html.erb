@@ -1,19 +1,16 @@
-<h1>Novedades</h1>
+<h1>Listing novedades</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Fechavacaciones</th>
+      <th>Iniciovacaciones</th>
       <th>Finvacaciones</th>
-      <th>Cesantias</th>
-      <th>Primalegal</th>
-      <th>Primavacaciones</th>
+      <th>Prendasrealizadas</th>
+      <th>Valorprenda</th>
+      <th>Total</th>
       <th>Sueldobasico</th>
-      <th>Horasextras</th>
-      <th>Recargosdiurnos</th>
-      <th>Dominicales</th>
-      <th>Festivos</th>
-      <th>Comiciones</th>
+      <th>Primalegal</th>
+      <th>Festivostrabajados</th>
       <th>Diasnotrabajados</th>
       <th>Horasnotrabajadas</th>
       <th colspan="3"></th>
@@ -23,22 +20,19 @@
   <tbody>
     <% @novedades.each do |novedade| %>
       <tr>
-        <td><%= novedade.fechavacaciones %></td>
+        <td><%= novedade.iniciovacaciones %></td>
         <td><%= novedade.finvacaciones %></td>
-        <td><%= novedade.cesantias %></td>
-        <td><%= novedade.primalegal %></td>
-        <td><%= novedade.primavacaciones %></td>
+        <td><%= novedade.prendasrealizadas %></td>
+        <td><%= novedade.valorprenda %></td>
+        <td><%= suma(novedade.prendasrealizadas, novedade.valorprenda) %></td>
         <td><%= novedade.sueldobasico %></td>
-        <td><%= novedade.horasextras %></td>
-        <td><%= novedade.recargosdiurnos %></td>
-        <td><%= novedade.dominicales %></td>
-        <td><%= novedade.festivos %></td>
-        <td><%= novedade.comiciones %></td>
+        <td><%= novedade.primalegal %></td>
+        <td><%= novedade.festivostrabajados %></td>
         <td><%= novedade.diasnotrabajados %></td>
         <td><%= novedade.horasnotrabajadas %></td>
-        <td><%= link_to 'Ver', novedade %></td>
-        <td><%= link_to 'Editar', edit_novedade_path(novedade) %></td>
-        <td><%= link_to 'Eliminar', novedade, method: :delete, data: { confirm: 'Estas Seguro?' } %></td>
+        <td><%= link_to 'Show', novedade %></td>
+        <td><%= link_to 'Edit', edit_novedade_path(novedade) %></td>
+        <td><%= link_to 'Destroy', novedade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -46,8 +40,12 @@
 
 <br>
 
-<%= link_to 'Registrar Novedad', new_novedade_path %>
+<%= link_to 'New Novedade', new_novedade_path %>
 
 
-
+<p>
+  Descargar:
+  <%= link_to "CSV", novedades_path(format: "csv") %> |
+  <%= link_to "Excel", novedades_path(format: "xls") %>
+</p>
 

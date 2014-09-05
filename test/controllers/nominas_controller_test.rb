@@ -18,7 +18,7 @@ class NominasControllerTest < ActionController::TestCase
 
   test "should create nomina" do
     assert_difference('Nomina.count') do
-      post :create, nomina: { comisiones: @nomina.comisiones, diasnotrabajados: @nomina.diasnotrabajados, dominicales: @nomina.dominicales, empleado_id: @nomina.empleado_id, festivos: @nomina.festivos, horasextras: @nomina.horasextras, horasnotrabajadas: @nomina.horasnotrabajadas, recargosdiurnos: @nomina.recargosdiurnos, recargosnocturnos: @nomina.recargosnocturnos, salariobasico: @nomina.salariobasico }
+      post :create, nomina: { nombre: @nomina.nombre }
     end
 
     assert_redirected_to nomina_path(assigns(:nomina))
@@ -35,7 +35,7 @@ class NominasControllerTest < ActionController::TestCase
   end
 
   test "should update nomina" do
-    patch :update, id: @nomina, nomina: { comisiones: @nomina.comisiones, diasnotrabajados: @nomina.diasnotrabajados, dominicales: @nomina.dominicales, empleado_id: @nomina.empleado_id, festivos: @nomina.festivos, horasextras: @nomina.horasextras, horasnotrabajadas: @nomina.horasnotrabajadas, recargosdiurnos: @nomina.recargosdiurnos, recargosnocturnos: @nomina.recargosnocturnos, salariobasico: @nomina.salariobasico }
+    patch :update, id: @nomina, nomina: { nombre: @nomina.nombre }
     assert_redirected_to nomina_path(assigns(:nomina))
   end
 
