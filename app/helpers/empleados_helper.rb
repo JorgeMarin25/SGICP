@@ -7,8 +7,8 @@ module EmpleadosHelper
      end
 end
 	
-	def mostrar_estado(estado) 
-	     if estado
+	def mostrar_estado(laborando) 
+	     if laborando
 			"Activo" 
 			else 
 			"Inactivo" 

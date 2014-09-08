@@ -82,6 +82,6 @@
   <%= estado(@empleado.estado) %>
 </p>
 
-  <%= link_to 'Editar', edit_empleado_path(@empleado) %> |
-  <%= link_to 'Atras', empleados_path %>
+  <%= link_to 'Editar', edit_empleado_path(@empleado), remote: true, class: "btn btn-primary btn-xs" %> |
+  <%= link_to 'Atras', empleados_path, class: "btn btn-success btn-xs" %>
 </div>

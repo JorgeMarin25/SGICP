@@ -3,7 +3,7 @@ class CreateEmpleados < ActiveRecord::Migration
     create_table :empleados do |t|
       t.string :nombre
       t.string :doc
-      t.boolean :estado
+      t.boolean :laborando
       t.references :estado, index: true
       t.string :direccion
       t.string :barrio

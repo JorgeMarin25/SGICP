@@ -1,15 +1,14 @@
-
-<li><%= link_to "Nomina", nominas_path %></li>
-<li><%= link_to "Clientes", clientes_path %></li>
-<li><%= link_to "Cotizaciones", cotizaciones_path %></li>
-<li><%= link_to "Facturacion", facturacions_path %></li>
-<li><%= link_to "Inventario De insumos", inventarios_path %></li>
-<li><%= link_to "estados", estados_path %></li>
 <% if current_user %> 
-      <%= link_to "Editar perfil", edit_user_path(current_user.id) %> 
-      <%= link_to "cerrar sesion", :logout, method: :get %> 
+	<li><%= link_to 'Empleados', empleados_path %></li>    
+    <li><%= link_to "Nomina", nominas_path %></li>
+	<li><%= link_to "Clientes", clientes_path %></li>
+	<li><%= link_to "Cotizaciones", cotizaciones_path %></li>
+	<li><%= link_to "Facturacion", facturacions_path %></li>
+	<li><%= link_to "Inventario De insumos", inventarios_path %></li>
+	<li><%= link_to "Registrar", new_user_path %></li>
+	<li><%= link_to "Editar perfil", edit_user_path(current_user.id) %></li> 
+    <li><%= link_to "Cerrar Sesion", :logout, method: :get %> </li>
  <% else %> 
-      <%= link_to "Registrarse", new_user_path %> | 
-      <%= link_to "iniciar sesion", :login %> 
+    <li><%= link_to "iniciar sesion", :login %> </li>
 <% end %>
 

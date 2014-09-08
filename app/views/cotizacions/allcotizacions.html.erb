@@ -1,28 +1,17 @@
 <h1>Listado de cotizaciones: </h1>
-<table class="table table-condensed">
-<%= form_tag cotizacions_path, :method => 'get' do %> 
-<% content_tag :label do %> 
-Buscar por: 
-<%= text_field_tag :search, params[:search] %> 
-<%= submit_tag "Buscar", :id => nil %> 
-<% end %> 
-<% end %>
+
+
+
 
 <table class="table table-condensed">
   <thead>
     <tr>
       <th>ID</th>
       <th>Cliente</th>
-      <th>Telefono</th>
       <th>Empresa</th>
       <th>Nit</th>
       <th>Producto</th>
       <th>Descripcion</th>
-      <th>Cantidad</th>
-      <th>Precio</th>
-      <th>Iva</th>
-      <th>Subtotal</th>
-      <th>Total</th>
       <th>Estado</th>
       <th colspan="3"></th>
     </tr>
@@ -33,20 +22,14 @@ Buscar por:
       <tr>
         <td><%= cotizacion.id %></td>
         <td><%= cotizacion.cliente.nombre %></td>
-        <td><%= cotizacion.cliente.telefono %></td>
         <td><%= cotizacion.cliente.empresa %></td>
         <td><%= cotizacion.cliente.nit %></td>
         <td><%= cotizacion.producto %></td>
         <td><%= cotizacion.descripcion %></td>
-        <td><%= cotizacion.cantidad %></td>
-        <td><%= cotizacion.precio %></td>
-        <td><%= cotizacion.iva %></td>
-        <td><%= cotizacion.subtotal %></td>
-        <td><%= cotizacion.total %></td>
         <td><%= cotizacion.estado %></td>
-        <td><%= link_to 'Ver', cliente_cotizacion_path(cotizacion.cliente,cotizacion) %></td>
-        <td><%= link_to 'Editar', edit_cliente_cotizacion_path(cotizacion.cliente,cotizacion) %></td>
-        <td><%= link_to 'Eliminar', cliente_cotizacion_path(cotizacion.cliente,cotizacion) , method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+        <td><%= link_to 'Ver', cliente_cotizacion_path(cotizacion.cliente,cotizacion), class: "btn btn-primary btn-xs" %></td>
+        <td><%= link_to 'Editar', edit_cliente_cotizacion_path(cotizacion.cliente,cotizacion), class: "btn btn-primary btn-xs" %></td>
+        <td><%= link_to 'Eliminar', cliente_cotizacion_path(cotizacion.cliente,cotizacion) , method: :delete, data: { confirm: 'Esta seguro?' }, class: "btn btn-warning btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>

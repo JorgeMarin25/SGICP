@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20140904195103) do
     t.string   "telref"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "estado"
   end
 
   create_table "estados", force: true do |t|
