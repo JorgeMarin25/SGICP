@@ -4,9 +4,9 @@ class FacturacionsController < ApplicationController
   # GET /facturacions
   # GET /facturacions.json
   def index
-    @facturacions = Facturacion.search(params[:search], params[:page]) 
+    #@facturacions = Facturacion.search(params[:search], params[:page]) 
 
-    #@facturacions = @cliente.facturacions.all
+    @facturacions = @cliente.facturacions.all
   end
 
   # GET /facturacions/1
@@ -39,7 +39,11 @@ end
   # POST /facturacions.json
   def create
     @facturacion = Facturacion.new(facturacion_params)
+<<<<<<< HEAD
+    
+=======
     @facturacion.cliente_id = @cliente.id
+>>>>>>> a2c440788686595e68dc13349268434c949f45d7
     respond_to do |format|
       if @facturacion.save
         format.html { redirect_to cliente_facturacions_path(@cliente), notice: 'Facturacion was successfully created.' }
