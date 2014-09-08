@@ -79,6 +79,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inventario_params
-      params.require(:inventario).permit(:productos, :cantidad)
+      params.require(:inventario).permit(:productos, :cantidad, :valor)
     end
 end
