@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="integer">iniciovacaciones</Data></Cell>
+        <Cell><Data ss:Type="integer">Finvacaciones</Data></Cell>
+        <Cell><Data ss:Type="integer">Prendasrealizadas</Data></Cell>
+        <Cell><Data ss:Type="integer">Valorprenda</Data></Cell>
+        <Cell><Data ss:Type="integer">Sueldobasico</Data></Cell>
+        <Cell><Data ss:Type="integer">Festivostrabajados</Data></Cell>
+        <Cell><Data ss:Type="integer">Diasnotrabajados</Data></Cell>
+        <Cell><Data ss:Type="integer">Horasnotrabajadas</Data></Cell>
+        <Cell><Data ss:Type="integer">Valor Total De Prendas</Data></Cell>
+
+
+      </Row>
+    <% @novedades.each do |novedade| %>
+      <Row>
+        <Cell><Data ss:Type="integer"><%= novedade.iniciovacaciones %></Data></Cell>
+        <Cell><Data ss:Type="integer"><%= novedade.finvacaciones %></Data></Cell>
+        <Cell><Data ss:Type="integer"><%= novedade.prendasrealizadas %></Data></Cell>
+        <Cell><Data ss:Type="integer"><%= novedade.valorprenda %></Data></Cell>
+        <Cell><Data ss:Type="integer"><%= novedade.sueldobasico %></Data></Cell>
+        <Cell><Data ss:Type="integer"><%= novedade.festivostrabajados %></Data></Cell>
+        <Cell><Data ss:Type="integer"><%= novedade.diasnotrabajados %></Data></Cell>
+        <Cell><Data ss:Type="integer"><%= novedade.horasnotrabajadas %></Data></Cell>
+        <Cell><Data ss:Type="integer"><%= suma(novedade.prendasrealizadas, novedade.valorprenda) %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
+

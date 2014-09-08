@@ -1,29 +1,5 @@
-<div class="pagina">
-<center><h1>Listado de Nomina</h1></center>
+<center><h1 class="alert alert-info">Listado - Nomina</h1></center>
+<br>
 
-<%= render "empleados/nomina" %>
-<table class="table table-condensed">
-  <tbody>
-    <% @nominas.each do |nomina| %>
-      <tr>
-
-        
-        <td><%= image_tag nomina.image.url(:thumb) %></td>
-       
-
-        
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<p>
-
-  <center><%= link_to "CSV", novedades_path(format: 'csv') %> |
-  <%= link_to "Excel", novedades_path(format: 'xls') %></center>
-</p>
-
-</div>
-
-
+<%= render 'empleados/nomina' %>
 

@@ -1,30 +1,17 @@
 class NominasController < ApplicationController
-
-
   before_action :set_nomina, only: [:show, :edit, :update, :destroy]
 
   # GET /nominas
   # GET /nominas.json
   def index
-    @nominas = Nomina.search(params[:search], params[:page]) 
+    @nominas = Nomina.all
     @empleados = Empleado.all
-end
+  end
 
-
- # GET /nominas/1
+  # GET /nominas/1
   # GET /nominas/1.json
   def show
-    @nomina = Nomina.find(params[:id])
-    respond_to do |format|
-      format.html
-      format.pdf do
-        pdf = NominaPdf.new(@nomina)
-        send_data pdf.render, filename: "nomina_#{@nomina_number}.pdf",
-                              type: "application/pdf",
-                              disposition: "inline"
-           end
-        end
-      end        
+  end
 
   # GET /nominas/new
   def new
@@ -75,8 +62,6 @@ end
     end
   end
 
-
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_nomina
@@ -85,6 +70,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def nomina_params
-      params.require(:nomina).permit(:horasextras, :recargosdiurnos, :recargosnocturnos, :dominicales, :festivos, :comisiones, :diasnotrabajados, :horasnotrabajadas, :empleado_id, :estado, :image)
+      params.require(:nomina).permit(:nombre)
     end
 end

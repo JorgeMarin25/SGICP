@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :novedades
+
+  resources :nominas
+
   get 'user_sessions/new'
 
   get 'user_sessions/create'
@@ -10,8 +14,6 @@ Rails.application.routes.draw do
 resources :novedades
 
   resources :cargos
-
-  resources :nominas
 
   resources :inventarios
 

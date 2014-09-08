@@ -9,9 +9,9 @@ end
 	
 	def mostrar_estado(laborando) 
 	     if laborando
-			"Activo" 
+			"<p class='label label-success'>Activo</p>".html_safe 
 			else 
-			"Inactivo" 
+			"<p class='label label-danger'>Inactivo</p>".html_safe 
 	     end 
     end 
 

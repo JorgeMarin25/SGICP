@@ -64,13 +64,19 @@ ActiveRecord::Schema.define(version: 20140904195103) do
     t.boolean  "genero"
     t.date     "fchinicio"
     t.date     "fchfinal"
-    t.string   "cargo_id"
+    t.integer  "cargo_id"
     t.string   "ref"
     t.string   "telref"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "laborando"
+ t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
   end
+
+ 
 
   create_table "estados", force: true do |t|
     t.string   "name"
@@ -132,39 +138,22 @@ ActiveRecord::Schema.define(version: 20140904195103) do
   end
 
   create_table "nominas", force: true do |t|
-    t.integer  "salariobasico"
-    t.integer  "horasextras"
-    t.integer  "recargosdiurnos"
-    t.integer  "recargosnocturnos"
-    t.integer  "dominicales"
-    t.integer  "festivos"
-    t.integer  "comisiones"
-    t.integer  "diasnotrabajados"
-    t.integer  "horasnotrabajadas"
-    t.integer  "empleado_id"
-    t.boolean  "estado"
+    t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+  
   end
 
-  add_index "nominas", ["empleado_id"], name: "index_nominas_on_empleado_id"
+  
 
   create_table "novedades", force: true do |t|
-    t.date     "fechavacaciones"
+    t.date     "iniciovacaciones"
     t.date     "finvacaciones"
-    t.integer  "cesantias"
-    t.integer  "primalegal"
-    t.integer  "primavacaciones"
+    t.integer  "prendasrealizadas"
+    t.integer  "valorprenda"
     t.integer  "sueldobasico"
-    t.integer  "horasextras"
-    t.integer  "recargosdiurnos"
-    t.integer  "dominicales"
-    t.integer  "festivos"
-    t.integer  "comiciones"
+    t.integer  "primalegal"
+    t.integer  "festivostrabajados"
     t.integer  "diasnotrabajados"
     t.integer  "horasnotrabajadas"
     t.datetime "created_at"

@@ -18,7 +18,7 @@ class NovedadesControllerTest < ActionController::TestCase
 
   test "should create novedade" do
     assert_difference('Novedade.count') do
-      post :create, novedade: { cesantias: @novedade.cesantias, comiciones: @novedade.comiciones, diasnotrabajados: @novedade.diasnotrabajados, dominicales: @novedade.dominicales, fechavacaciones: @novedade.fechavacaciones, festivos: @novedade.festivos, finvacaciones: @novedade.finvacaciones, horasextras: @novedade.horasextras, horasnotrabajadas: @novedade.horasnotrabajadas, primalegal: @novedade.primalegal, primavacaciones: @novedade.primavacaciones, recargosdiurnos: @novedade.recargosdiurnos, sueldobasico: @novedade.sueldobasico }
+      post :create, novedade: { diasnotrabajados: @novedade.diasnotrabajados, festivostrabajados: @novedade.festivostrabajados, finvacaciones: @novedade.finvacaciones, horasnotrabajadas: @novedade.horasnotrabajadas, iniciovacaciones: @novedade.iniciovacaciones, prendasrealizadas: @novedade.prendasrealizadas, primalegal: @novedade.primalegal, sueldobasico: @novedade.sueldobasico, valorprenda: @novedade.valorprenda }
     end
 
     assert_redirected_to novedade_path(assigns(:novedade))
@@ -35,7 +35,7 @@ class NovedadesControllerTest < ActionController::TestCase
   end
 
   test "should update novedade" do
-    patch :update, id: @novedade, novedade: { cesantias: @novedade.cesantias, comiciones: @novedade.comiciones, diasnotrabajados: @novedade.diasnotrabajados, dominicales: @novedade.dominicales, fechavacaciones: @novedade.fechavacaciones, festivos: @novedade.festivos, finvacaciones: @novedade.finvacaciones, horasextras: @novedade.horasextras, horasnotrabajadas: @novedade.horasnotrabajadas, primalegal: @novedade.primalegal, primavacaciones: @novedade.primavacaciones, recargosdiurnos: @novedade.recargosdiurnos, sueldobasico: @novedade.sueldobasico }
+    patch :update, id: @novedade, novedade: { diasnotrabajados: @novedade.diasnotrabajados, festivostrabajados: @novedade.festivostrabajados, finvacaciones: @novedade.finvacaciones, horasnotrabajadas: @novedade.horasnotrabajadas, iniciovacaciones: @novedade.iniciovacaciones, prendasrealizadas: @novedade.prendasrealizadas, primalegal: @novedade.primalegal, sueldobasico: @novedade.sueldobasico, valorprenda: @novedade.valorprenda }
     assert_redirected_to novedade_path(assigns(:novedade))
   end
 

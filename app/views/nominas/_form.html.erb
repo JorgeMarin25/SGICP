@@ -11,56 +11,11 @@
     </div>
   <% end %>
 
-  <div class="field"> 
- <br> <%= f.collection_select :empleado_id, Empleado.all, :id, :nombre, class: "form­control", prompt: 
-"Seleccione empleado" %> 
-</div> 
-
-
   <div class="field">
-    <%= f.label :horasextras %><br>
-    <%= f.number_field :horasextras %>
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
   </div>
-  
-  <div class="field">
-    <%= f.label :recargosdiurnos %><br>
-    <%= f.number_field :recargosdiurnos %>
-  </div>
-  <div class="field">
-    <%= f.label :recargosnocturnos %><br>
-    <%= f.number_field :recargosnocturnos %>
-  </div>
-  <div class="field">
-    <%= f.label :dominicales %><br>
-    <%= f.number_field :dominicales %>
-  </div>
-  <div class="field">
-    <%= f.label :festivos %><br>
-    <%= f.number_field :festivos %>
-  </div>
-  <div class="field">
-    <%= f.label :comisiones %><br>
-    <%= f.number_field :comisiones %>
-  </div>
-  <div class="field">
-    <%= f.label :diasnotrabajados %><br>
-    <%= f.number_field :diasnotrabajados %>
-  </div>
-  <div class="field">
-    <%= f.label :horasnotrabajadas %><br>
-    <%= f.number_field :horasnotrabajadas %>
-  </div>
-  <div class="field">
-    <%= f.label :estado %><br>
-    <%= f.check_box :estado %>
-  </div>
-  
-  <div class="field">
-  <%= f.label :image %>
-  <%= f.file_field :image %>
-</div>
-
   <div class="actions">
-    <%= f.submit "Guardar" %>
+    <%= f.submit %>
   </div>
 <% end %>
