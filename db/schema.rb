@@ -127,6 +127,7 @@ ActiveRecord::Schema.define(version: 20140904161129) do
     t.string   "cantidad"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "valor"
   end
 
   create_table "nominas", force: true do |t|

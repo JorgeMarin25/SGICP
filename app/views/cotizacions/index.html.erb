@@ -1,42 +1,47 @@
-<h1>Cotizaciones de: <%= @cliente.nombre %></h1>
-
-
-<table class="table table-condensed">
-  <thead>
-    <tr>
-      <th>Cliente</th>
-      <th>Telefono</th>
-      <th>Empresa</th>
-      
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cotizacions.each do |cotizacion| %>
+  <h1>Cotizaciones de: <%= @cliente.nombre %></h1>
+  <table class="table table-condensed">
+    <thead>
       <tr>
-        <td><%= cotizacion.cliente %></td>
-        <td><%= cotizacion.telefono %></td>
-        <td><%= cotizacion.empresa %></td>
-        <td><%= link_to 'Ver', cotizacion %></td>
-        <td><%= link_to 'Editar', edit_cotizacion_path(cotizacion) %></td>
-        <td><%= link_to 'Eliminar', cotizacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Cliente</th>
+        <th>Telefono</th>
+        <th>Empresa</th>
+        <th>Nit</th>
+        <th>Producto</th>
+        <th>Descripcion</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Iva</th>
+        <th>Subtotal</th>
+        <th>Total</th>
+        <th>Estado</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to t('.new', :default => t("helpers.links.nuevo")), 
- 
-new_cliente_cotizacion_path(@cliente), 
- 
-:class => 'btn btn­primary' %> 
-
-
-<%= will_paginate @cotizacions, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
-&raquo;' %> 
-<br> 
-Cotizaciones: <%= @cotizacions.count %>
-
+  </thead>
+    <tbody>
+      <% @cotizacions.each do |cotizacion| %>
+      <tr>
+        <td><%= cotizacion.cliente.nombre %></td>
+        <td><%= cotizacion.cliente.telefono %></td>
+        <td><%= cotizacion.cliente.empresa %></td>
+        <td><%= cotizacion.cliente.nit %></td>
+        <td><%= cotizacion.producto %></td>
+        <td><%= cotizacion.descripcion %></td>
+        <td><%= cotizacion.cantidad %></td>
+        <td><%= cotizacion.precio %></td>
+        <td><%= cotizacion.iva %></td>
+        <td><%= cotizacion.subtotal %></td>
+        <td><%= cotizacion.total %></td>
+        <td><%= cotizacion.estado %></td>
+        <td><%= link_to 'Ver', cliente_cotizacion_path(@cliente,cotizacion) %></td>
+        <td><%= link_to 'Editar', edit_cliente_cotizacion_path(@cliente,cotizacion) %></td>
+        <td><%= link_to 'Eliminar', cliente_cotizacion_path(@cliente,cotizacion) , method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to t('.new', :default => t("helpers.links.nuevo")),
+  new_cliente_cotizacion_path(@cliente),:class => 'btn btn­primary' %>
+  <%= will_paginate @cotizacions, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente&raquo;' %>
+  <br>
+  Cotizaciones: <%= @cotizacions.count %>

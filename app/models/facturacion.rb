@@ -2,9 +2,10 @@ class Facturacion < ActiveRecord::Base
 
 belongs_to :cotizacion  
 
-	def self.search(search, page) where(['upper(fecha) like ?', 
-		"%#{search}%".upcase]).paginate(page: page, per_page: 5).order("fecha") 
+	def self.search(search, page) where(['id = ?', 
+		"%#{search}%"]).paginate(page: page, per_page: 5).order("id") 
 	end 
+
 	# Validar que los atributos sean obligatorios
 	validates :fecha, :presence => true
 	validates :fchven, :presence => true
@@ -21,5 +22,7 @@ belongs_to :cotizacion
 	validates :subtotal, :presence => true
 	# Valida si un atributo es numerico
 	validates :cantidad, numericality: true
+
+
 
 end
