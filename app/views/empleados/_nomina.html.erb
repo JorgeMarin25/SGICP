@@ -13,7 +13,6 @@
       <tr>
         <td class="bg-warning"><%= empleado.nombre %></td>
         <td class="bg-warning"><%= empleado.doc %></td>
-        <td class="bg-warning"><%= est(empleado.activo) %></td>
         <td class="bg-warning"><%= link_to 'Registrar-Novedad', new_novedade_path %></td>
     <% end %>
 
@@ -23,8 +22,8 @@
 <br>
 
 <center><p>
-  <%= link_to "CSV", novedades_path(format: "csv") %> |
-  <%= link_to "Excel", novedades_path(format: "xls") %>
+  <%= link_to "CSV", novedades_path(format: "csv"), class: "btn btn-primary btn-xs" %> |
+  <%= link_to "Excel", novedades_path(format: "xls"), class: "btn btn-primary btn-xs" %>
 </p></center>
 
 

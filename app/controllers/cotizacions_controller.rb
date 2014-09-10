@@ -82,6 +82,6 @@ end
     # Never trust parameters from the scary internet, only allow the white list through.
     def cotizacion_params
       params.require(:cotizacion).permit(:cliente_id, :producto, :descripcion, 
-                                         :cantidad, :precio, :iva, :subtotal, :total, :estado)
+                                         :cantidad, :precio, :iva, :subtotal, :total, :estado, :fch_creacion, :fch_final)
     end
 end

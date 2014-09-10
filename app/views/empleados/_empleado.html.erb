@@ -1,9 +1,9 @@
 <tr id=<%= "empleado_#{empleado.id}" %>> 
-        <td><%= empleado.nombre %></td>
-        <td><%= empleado.doc %></td>
-        <td><%= empleado.cargo.nombre rescue nil %></td>
-        <td><%= link_to 'Mostrar', empleado, remote: true , class: "btn btn-primary btn-xs" %></td> 
+        <td class="warning"><%= empleado.nombre %></td>
+        <td class="success"><%= empleado.doc %></td>
+        <td class="danger"><%= empleado.cargo.nombre rescue nil %></td>
+        
+        <td><%= link_to 'Mostrar', empleado, remote: true, class: "btn btn-primary btn-xs" %></td> 
         <td><%= link_to 'Editar', edit_empleado_path(empleado), remote: true, class: "btn btn-primary btn-xs" %></td> 
-        <td><%=  link_to   'Eliminar',   empleado,   method:   :delete,   data:   {   confirm:   'Esta   Seguro?' , remote: true}, class: "btn btn-warning btn-xs"
-%></td> 
+        <td><%=  link_to   'Eliminar',   empleado,   method:   :delete,   data:   {   confirm:   'Esta   Seguro?' , remote: true}, class: "btn btn-warning btn-xs"%></td> 
 </tr> 

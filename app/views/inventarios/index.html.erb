@@ -1,4 +1,5 @@
-<h1>Lista de  inventarios</h1>
+<center><h1 class="alert alert-info">Lista de inventarios</h1></center>
+
 
 
 <%= form_tag inventarios_path, :method => 'get' do %> 
@@ -12,10 +13,12 @@ Buscar por producto:
 <table class="table table-condensed">
   <thead>
     <tr>
-      <th>Productos</th>
-      <th>Cantidad</th>
-      <th>valor unitario</th>
-      <th>Precio</th>
+      <th class="info">Productos</th>
+      <th class="success">Cantidad</th>
+      <th class="danger">valor unitario</th>
+      <th class="warning">Precio</th>
+      <th class="success">Opciones</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,13 +26,13 @@ Buscar por producto:
   <tbody>
     <% @inventarios.each do |inventario| %>
       <tr>
-        <td><%= inventario.productos %></td>
-        <td><%= inventario.cantidad %></td>
-        <td><%= inventario.valor %></td>
-        <td><%= suma(inventario.cantidad, inventario.valor) %></td>
-        <td><%= link_to 'Ver', inventario %></td>
-        <td><%= link_to 'Editar', edit_inventario_path(inventario) %></td>
-        <td><%= link_to 'Eliminar', inventario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="info"><%= inventario.productos %></td>
+        <td class="success"><%= inventario.cantidad %></td>
+        <td class="danger"><%= inventario.valor %></td>
+        <td class="warning"><%= suma(inventario.cantidad, inventario.valor) %></td>
+        <td class="success"><%= link_to 'Ver', inventario, class: "btn btn-primary btn-xs" %></td>
+        <td class="success"><%= link_to 'Editar', edit_inventario_path(inventario), class: "btn btn-primary btn-xs" %></td>
+        <td class="success"><%= link_to 'Eliminar', inventario, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -37,7 +40,7 @@ Buscar por producto:
 
 <br>
 
-<%= link_to 'Nuevo Inventario', new_inventario_path %>
+<%= link_to 'Nuevo Inventario', new_inventario_path, class: "btn btn-warning btn-xs" %>
 
 <%= will_paginate @inventarios, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente 
 &raquo;' %> 

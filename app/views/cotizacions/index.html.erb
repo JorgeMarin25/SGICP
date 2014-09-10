@@ -1,37 +1,22 @@
-<h1>Cotizaciones de: <%= @cliente.nombre %></h1>
+<center><h1 class="alert alert-info">Cotizaciones de: <%= @cliente.nombre %></h1></center>
 	<table class="table table-condensed">
 		<thead>
 			<tr>
-			<th>Cliente</th>
-			<th>Telefono</th>
-			<th>Empresa</th>
-			<th>Nit</th>
-			<th>Producto</th>
-			<th>Descripcion</th>
-			<th>Cantidad</th>
-			<th>Precio</th>
-			<th>Iva</th>
-			<th>Subtotal</th>
-			<th>Total</th>
-			<th>Estado</th>
+			<th class="warning">Cliente</th>
+			<th class="success">Empresa</th>
+			<th class="danger">Producto</th>
+			<th class="info">Estado</th>
 			<th colspan="3"></th>
 			</tr>
 		</thead>
 		<tbody>
 			<% @cotizacions.each do |cotizacion| %>
 			<tr>
-			<td><%= cotizacion.cliente.nombre %></td>
-			<td><%= cotizacion.cliente.telefono %></td>
-			<td><%= cotizacion.cliente.empresa %></td>
-			<td><%= cotizacion.cliente.nit %></td>
-			<td><%= cotizacion.producto %></td>
-			<td><%= cotizacion.descripcion %></td>
-			<td><%= cotizacion.cantidad %></td>
-			<td><%= cotizacion.precio %></td>
-			<td><%= cotizacion.iva %></td>
-			<td><%= cotizacion.subtotal %></td>
-			<td><%= cotizacion.total %></td>
-			<td><%= cotizacion.estado %></td>
+			<td class="warning"><%= cotizacion.cliente.nombre %></td>
+			<td class="success"><%= cotizacion.cliente.empresa %></td>
+			<td class="danger"><%= cotizacion.producto %></td>
+			<td class="info"><%= cotizacion.estado %></td>
+			
 			<td><%= link_to 'Ver', cliente_cotizacion_path(@cliente,cotizacion), class: "btn btn-primary btn-xs" %></td>
 			<td><%= link_to 'Editar', edit_cliente_cotizacion_path(@cliente,cotizacion), class: "btn btn-primary btn-xs" %></td>
 			<td><%= link_to 'Eliminar', cliente_cotizacion_path(@cliente,cotizacion) , method: :delete, data: { confirm: 'Esta seguro?' }, class: "btn btn-warning btn-xs" %></td>

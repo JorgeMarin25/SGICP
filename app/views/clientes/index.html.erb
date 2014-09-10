@@ -1,4 +1,4 @@
-<h1>Clientes</h1>
+<center><h1 class="alert alert-info">Clientes</h1></center>
 
 <%= form_tag clientes_path, :method => 'get' do %>
 <% content_tag :label do %>
@@ -12,15 +12,11 @@ Buscar :
   <thead>
     <tr>
    
-      <th>Cotizacion</th>
-      <th>Nombre</th>
-      <th>Empresa</th>
-      <th>Nit</th>
-      <th>Direccion</th>
-      <th>Ciudad</th>
-      <th>Telefono</th>
-      <th>Correo</th>
-      
+      <th class="warning">Cotizacion</th>
+      <th class="success">Nombre</th>
+      <th class="danger">Empresa</th>
+      <th class="info">Nit</th>
+    
     </tr>
   </thead>
 
@@ -31,7 +27,7 @@ Buscar :
 
 <br>
 
-<%= link_to 'New Cliente', new_cliente_path %>
+<%= link_to 'Nuevo cliente', new_cliente_path, class: "btn btn-warning btn-xs" %>
 
 <%= will_paginate @clientes, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
 <br>

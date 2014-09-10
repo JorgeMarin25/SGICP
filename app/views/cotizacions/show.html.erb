@@ -1,6 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Fecha de creacion:</strong>
+  <%= @cotizacion.fch_creacion %>
+</p>
+<p>
+  <strong>Fecha de entrega:</strong>
+  <%= @cotizacion.fch_final %>
+</p>
+
+<p>
   <strong>Cliente:</strong>
   <%= @cotizacion.cliente.nombre %>
 </p>

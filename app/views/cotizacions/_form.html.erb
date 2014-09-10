@@ -10,7 +10,14 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="field">
+    <%= f.label :fch_creacion %><br>
+    <%= f.date_select  :fch_creacion %>
+  </div>
+  <div class="field">
+    <%= f.label :fch_final %><br>
+    <%= f.date_select  :fch_final %>
+  </div>
   <div class="field">
     <%= f.label :producto %><br>
     <%= f.text_field :producto %>
@@ -39,6 +46,7 @@
     <%= f.label :total %><br>
     <%= f.number_field :total %>
   </div>
+
   <div class="field"> 
   Aprobado: <%= f.radio_button(:estado, true) %> 
   No aprobado: <%= f.radio_button(:estado, false) %> 

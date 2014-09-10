@@ -5,10 +5,13 @@
 	<li><%= link_to "Cotizaciones", cotizaciones_path %></li>
 	<li><%= link_to "Facturacion", facturacions_path %></li>
 	<li><%= link_to "Inventario De insumos", inventarios_path %></li>
-	<li><%= link_to "Registrar", new_user_path %></li>
+	<li><%= link_to "Cargos", cargos_path %></li>
+	<li><%= link_to "estados", estados_path %></li>
 	<li><%= link_to "Editar perfil", edit_user_path(current_user.id) %></li> 
-    <li><%= link_to "Cerrar Sesion", :logout, method: :get %> </li>
+	<li><%= link_to "Cerrar Sesion", :logout, method: :get %> </li>
  <% else %> 
     <li><%= link_to "iniciar sesion", :login %> </li>
+    
+	<li><%= link_to "Registrar", new_user_path %></li>
 <% end %>
 

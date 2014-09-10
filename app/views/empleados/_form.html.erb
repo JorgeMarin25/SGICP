@@ -13,6 +13,7 @@
   <% end %>
 
   <div class="field">
+
    <%= f.collection_select :cargo_id, Cargo.all, :id, :nombre, class: "form-control", prompt: "Cargo" %>
   </div>
 
@@ -67,10 +68,7 @@
     <%= f.label :fchfinal %><br>
     <%= f.date_select :fchfinal %>
   </div>
-  
-  <div class="field">
-   <%= f.collection_select :cargo_id, Cargo.all, :id, :nombre, class: "form-control", prompt: "Cargo" %>
-  </div>
+
   <div class="field">
     <%= f.label :ref %><br>
     <%= f.text_field :ref %>

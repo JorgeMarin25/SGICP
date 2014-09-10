@@ -16,7 +16,7 @@
 </p>
 
 
-<%= link_to 'Edit', edit_inventario_path(@inventario) %> |
-<%= link_to 'Back', inventarios_path %>
+<%= link_to 'Edit', edit_inventario_path(@inventario), class: "btn btn-primary btn-xs" %> |
+<%= link_to 'Back', inventarios_path, class: "btn btn-primary btn-xs" %>
 
-<p><%= link_to 'Generar (PDF)', inventario_path(@inventario, format: 'pdf')%></P>
+<p><%= link_to 'Generar (PDF)', inventario_path(@inventario, format: 'pdf'), class: "btn btn-primary btn-xs"%></P>
