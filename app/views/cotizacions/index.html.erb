@@ -19,7 +19,7 @@
 			
 			<td><%= link_to 'Ver', cliente_cotizacion_path(@cliente,cotizacion), class: "btn btn-primary btn-xs" %></td>
 			<td><%= link_to 'Editar', edit_cliente_cotizacion_path(@cliente,cotizacion), class: "btn btn-primary btn-xs" %></td>
-			<td><%= link_to 'Eliminar', cliente_cotizacion_path(@cliente,cotizacion) , method: :delete, data: { confirm: 'Esta seguro?' }, class: "btn btn-warning btn-xs" %></td>
+			<td><%= link_to 'Eliminar', cliente_cotizacion_path(@cliente,cotizacion) , method: :delete, data: { confirm: 'Esta seguro?' }, class: "btn btn-primary btn-xs" %></td>
 			</tr>
 			<% end %>
 		</tbody>
