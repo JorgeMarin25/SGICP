@@ -13,7 +13,7 @@ validates :telefono, :presence => true
 validates :correo, :presence => true
 # validar que un atributos unicos
 validates :empresa, uniqueness: { message: "No se puede Repetir" }
-validates :empresa, uniqueness: { message: "No se puede Repetir" }
+
 # validar formato de un correo
 validates :correo, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i,
 message: 'Formato no valido' }
@@ -25,4 +25,7 @@ validates :nombre, length: { minimum: 5, maximum: 50 }
 		"%#{search}%".upcase]).paginate(page: page, per_page: 5).order("nombre")
 	end
 
+	def self.concat(cliente)
+		cliente.nit + " - " + cliente.empresa
+	end	
 end

@@ -21,16 +21,13 @@
   </div>
 
   
- <div class="field"> 
+ <div class="field" id="cliente"> 
    Cliente: <br> <%= f.collection_select :cliente_id, Cliente.all, :id, :nombre, class: 
      "form­control", prompt: 
      "Seleccione cliente" %> 
   </div>  
 
-
-
-
-  <div class="field"> 
+  <div class="field" id="cotizacion"> 
    Cotizacion: <br> <%= f.collection_select :cotizacion_id, Cotizacion.all, :id, :id, class: 
      "form­control", prompt: 
      "Seleccione ID de la cotizacion" %> 

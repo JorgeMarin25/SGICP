@@ -1,0 +1,1 @@
+cliente = [{nombre: "Jorge",empresa: "Los Tupamaros", nit: "1345", direccion: "cll 63 # 23 - 12", ciudad: "Barranquilla",telefono: "2131313", correo: "jorge@gmail.com"}] 

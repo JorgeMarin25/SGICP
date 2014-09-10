@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140904195103) do
+ActiveRecord::Schema.define(version: 20140908204930) do
 
   create_table "cargos", force: true do |t|
     t.string   "nombre"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140904195103) do
     t.string   "correo"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "nitnombre"
   end
 
   create_table "cotizacions", force: true do |t|
@@ -54,6 +55,7 @@ ActiveRecord::Schema.define(version: 20140904195103) do
   create_table "empleados", force: true do |t|
     t.string   "nombre"
     t.string   "doc"
+    t.boolean  "laborando"
     t.integer  "estado_id"
     t.string   "direccion"
     t.string   "barrio"
@@ -67,16 +69,16 @@ ActiveRecord::Schema.define(version: 20140904195103) do
     t.integer  "cargo_id"
     t.string   "ref"
     t.string   "telref"
+    t.boolean  "activo"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "laborando"
- t.string   "cover_file_name"
+    t.string   "cover_file_name"
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
   end
 
- 
+  add_index "empleados", ["estado_id"], name: "index_empleados_on_estado_id"
 
   create_table "estados", force: true do |t|
     t.string   "name"
@@ -114,8 +116,8 @@ ActiveRecord::Schema.define(version: 20140904195103) do
   create_table "facturacions", force: true do |t|
     t.date     "fecha"
     t.date     "fchven"
-    t.integer  "cotizacion_id"
-    t.integer  "cliente_id"
+    t.string   "cotizacion"
+    t.string   "cliente"
     t.string   "telefono"
     t.string   "empresa"
     t.string   "nit"
@@ -130,8 +132,8 @@ ActiveRecord::Schema.define(version: 20140904195103) do
   end
 
   create_table "inventarios", force: true do |t|
-    t.string   "productos"
-    t.string   "cantidad"
+    t.string   "productos",  limit: nil
+    t.integer  "cantidad"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "valor"
@@ -141,10 +143,7 @@ ActiveRecord::Schema.define(version: 20140904195103) do
     t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
-  
   end
-
-  
 
   create_table "novedades", force: true do |t|
     t.date     "iniciovacaciones"

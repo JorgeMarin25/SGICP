@@ -2,7 +2,8 @@ class CreateInventarios < ActiveRecord::Migration
   def change
     create_table :inventarios do |t|
       t.string :productos
-      t.string :cantidad
+      t.integer :cantidad
+      t.integer :valor
 
       t.timestamps
     end
