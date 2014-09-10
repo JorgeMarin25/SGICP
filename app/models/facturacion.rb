@@ -1,5 +1,6 @@
 class Facturacion < ActiveRecord::Base
 
+
 belongs_to :cotizacion  
 
 	def self.search(search, page) where(['id = ?', 
@@ -10,7 +11,7 @@ belongs_to :cotizacion
 	validates :fecha, :presence => true
 	validates :fchven, :presence => true
 	validates :cotizacion_id, :presence => true
-	validates :cliente, :presence => true
+	validates :cliente_id, :presence => true
 	validates :telefono, :presence => true
 	validates :empresa , :presence => true
 	validates :nit, :presence => true

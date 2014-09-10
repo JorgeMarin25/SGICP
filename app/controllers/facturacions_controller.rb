@@ -1,12 +1,12 @@
 class FacturacionsController < ApplicationController
-  before_action :set_facturacion, only: [:show, :edit, :update, :destroy, :index, :new, :create]
+  before_action :set_facturacion, only: [:show, :edit, :update, :destroy]
 
   # GET /facturacions
   # GET /facturacions.json
   def index
     @facturacions = Facturacion.search(params[:search], params[:page]) 
 
-    #@facturacions = @cliente.facturacions.all
+    #@facturacions = Facturacions.all
   end
 
   # GET /facturacions/1
@@ -39,10 +39,10 @@ end
   # POST /facturacions.json
   def create
     @facturacion = Facturacion.new(facturacion_params)
-    @facturacion.cliente_id = @cliente.id
+    #@facturacion.cliente_id = @cliente.id
     respond_to do |format|
       if @facturacion.save
-        format.html { redirect_to cliente_facturacions_path(@cliente), notice: 'Facturacion was successfully created.' }
+        format.html { redirect_to @facturacion, notice: 'Facturacion was successfully created.' }
         format.json { render :show, status: :created, location: @facturacion }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ end
   def update
     respond_to do |format|
       if @facturacion.update(facturacion_params)
-        format.html { redirect_to  cliente_facturacions_path(@cliente), notice: 'Facturacion was successfully updated.' }
+        format.html { redirect_to  @facturacion, notice: 'Facturacion was successfully updated.' }
         format.json { render :show, status: :ok, location: @facturacion }
       else
         format.html { render :edit }
@@ -70,7 +70,7 @@ end
   def destroy
     @facturacion.destroy
     respond_to do |format|
-      format.html { redirect_to cliente_facturacions_url(@cliente), notice: 'Facturacion was successfully destroyed.' }
+      format.html { redirect_to facturacions_url, notice: 'Facturacion was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -78,8 +78,8 @@ end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_facturacion
-      @cliente = Cliente.find(params[:cliente_id])
-      @facturacion = Facturacion.find(params[:id]) if params[:id]
+      #@cliente = Cliente.find(params[:cliente_id])
+      @facturacion = Facturacion.find(params[:id]) 
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

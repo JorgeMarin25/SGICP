@@ -27,13 +27,7 @@ resources :novedades
 
   resources :empleados do
       resources :experiencia
-  end
-
-  resources :empleados do
       resources :estudios
-  end
-
-  resources :empleados do
       resources :nominas
   end
 

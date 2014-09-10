@@ -25,10 +25,11 @@ class ClientesController < ApplicationController
   # POST /clientes.json
   def create
     @cliente = Cliente.new(cliente_params)
+    @cliente.nitnombre = Cliente.concat(@cliente)
 
     respond_to do |format|
       if @cliente.save
-        format.html { redirect_to @cliente, notice: 'Cliente was successfully created.' }
+        format.html { redirect_to clientes_path, notice: 'Cliente was successfully created.' }
         format.json { render :show, status: :created, location: @cliente }
       else
         format.html { render :new }
@@ -40,9 +41,11 @@ class ClientesController < ApplicationController
   # PATCH/PUT /clientes/1
   # PATCH/PUT /clientes/1.json
   def update
+    
     respond_to do |format|
       if @cliente.update(cliente_params)
-        format.html { redirect_to @cliente, notice: 'Cliente was successfully updated.' }
+        @cliente.update(nitnombre: Cliente.concat(@cliente))
+        format.html { redirect_to clientes_path, notice: 'Cliente was successfully updated.' }
         format.json { render :show, status: :ok, location: @cliente }
       else
         format.html { render :edit }
@@ -69,6 +72,6 @@ class ClientesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cliente_params
-      params.require(:cliente).permit(:nombre, :empresa, :nit, :direccion, :ciudad, :telefono, :correo)
+      params.require(:cliente).permit(:nombre, :empresa, :nit, :direccion, :ciudad, :telefono, :correo, :nitnombre)
     end
 end

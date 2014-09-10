@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140905210050) do
     t.string   "correo"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "nitnombre"
   end
 
   create_table "cotizacions", force: true do |t|
@@ -115,8 +116,8 @@ ActiveRecord::Schema.define(version: 20140905210050) do
   create_table "facturacions", force: true do |t|
     t.date     "fecha"
     t.date     "fchven"
-    t.string   "cotizacion"
-    t.string   "cliente"
+    t.integer  "cotizacion_id"
+    t.integer  "cliente_id"
     t.string   "telefono"
     t.string   "empresa"
     t.string   "nit"
@@ -131,17 +132,21 @@ ActiveRecord::Schema.define(version: 20140905210050) do
   end
 
   create_table "inventarios", force: true do |t|
-    t.string   "productos"
-    t.string   "cantidad"
+    t.string   "productos",  limit: nil
+    t.integer  "cantidad"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "valor"
   end
 
   create_table "nominas", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
+  
   end
+
+  
 
   create_table "novedades", force: true do |t|
     t.date     "iniciovacaciones"
