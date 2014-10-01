@@ -4,31 +4,17 @@ class FacturacionsController < ApplicationController
   # GET /facturacions
   # GET /facturacions.json
   def index
-    @facturacions = Facturacion.search(params[:search], params[:page]) 
-
-    #@facturacions = Facturacions.all
+    @facturacions = Facturacion.all
   end
 
   # GET /facturacions/1
   # GET /facturacions/1.json
   def show
-    @facturacion = Facturacion.find(params[:id])
-    respond_to do |format|
-    format.html
-    format.pdf do
-    pdf = FacturacionPdf.new(@facturacion)
-    send_data pdf.render, filename: "Facturacion_#{@facturacion_number}.pdf",
-    type: "application/pdf",
-    disposition: "inline"
-end
-end
-
   end
 
   # GET /facturacions/new
   def new
     @facturacion = Facturacion.new
-    @facturacion.cliente_id = @cliente_id
   end
 
   # GET /facturacions/1/edit
@@ -39,7 +25,7 @@ end
   # POST /facturacions.json
   def create
     @facturacion = Facturacion.new(facturacion_params)
-    #@facturacion.cliente_id = @cliente.id
+
     respond_to do |format|
       if @facturacion.save
         format.html { redirect_to @facturacion, notice: 'Facturacion was successfully created.' }
@@ -56,7 +42,7 @@ end
   def update
     respond_to do |format|
       if @facturacion.update(facturacion_params)
-        format.html { redirect_to  @facturacion, notice: 'Facturacion was successfully updated.' }
+        format.html { redirect_to @facturacion, notice: 'Facturacion was successfully updated.' }
         format.json { render :show, status: :ok, location: @facturacion }
       else
         format.html { render :edit }
@@ -78,12 +64,11 @@ end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_facturacion
-      #@cliente = Cliente.find(params[:cliente_id])
-      @facturacion = Facturacion.find(params[:id]) 
+      @facturacion = Facturacion.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def facturacion_params
-        params.require(:facturacion).permit(:fecha, :fchven, :cotizacion_id, :cliente_id, :telefono, :empresa, :nit, :producto, :descripcion, :cantidad, :precio, :iva, :subtotal)
+      params.require(:facturacion).permit(:fecha_facturacion, :fecha_vencimiento, :cliente_id, :cotizacion_id, :estado, :iva, :total)
     end
 end

@@ -18,7 +18,7 @@ class FacturacionsControllerTest < ActionController::TestCase
 
   test "should create facturacion" do
     assert_difference('Facturacion.count') do
-      post :create, facturacion: { cantidad: @facturacion.cantidad, cliente: @facturacion.cliente, cotizacion: @facturacion.cotizacion, descripcion: @facturacion.descripcion, empresa: @facturacion.empresa, fchven: @facturacion.fchven, fecha: @facturacion.fecha, iva: @facturacion.iva, nit: @facturacion.nit, precio: @facturacion.precio, producto: @facturacion.producto, subtotal: @facturacion.subtotal, telefono: @facturacion.telefono }
+      post :create, facturacion: { cliente_id: @facturacion.cliente_id, cotizacion_id: @facturacion.cotizacion_id, estado: @facturacion.estado, fecha_facturacion: @facturacion.fecha_facturacion, fecha_vencimiento: @facturacion.fecha_vencimiento, iva: @facturacion.iva, total: @facturacion.total }
     end
 
     assert_redirected_to facturacion_path(assigns(:facturacion))
@@ -35,7 +35,7 @@ class FacturacionsControllerTest < ActionController::TestCase
   end
 
   test "should update facturacion" do
-    patch :update, id: @facturacion, facturacion: { cantidad: @facturacion.cantidad, cliente: @facturacion.cliente, cotizacion: @facturacion.cotizacion, descripcion: @facturacion.descripcion, empresa: @facturacion.empresa, fchven: @facturacion.fchven, fecha: @facturacion.fecha, iva: @facturacion.iva, nit: @facturacion.nit, precio: @facturacion.precio, producto: @facturacion.producto, subtotal: @facturacion.subtotal, telefono: @facturacion.telefono }
+    patch :update, id: @facturacion, facturacion: { cliente_id: @facturacion.cliente_id, cotizacion_id: @facturacion.cotizacion_id, estado: @facturacion.estado, fecha_facturacion: @facturacion.fecha_facturacion, fecha_vencimiento: @facturacion.fecha_vencimiento, iva: @facturacion.iva, total: @facturacion.total }
     assert_redirected_to facturacion_path(assigns(:facturacion))
   end
 

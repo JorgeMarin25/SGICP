@@ -12,63 +12,33 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :fecha %><br>
-    <%= f.date_select :fecha %>
+    <%= f.label :fecha_facturacion %><br>
+    <%= f.date_select :fecha_facturacion %>
   </div>
   <div class="field">
-    <%= f.label :fchven %><br>
-    <%= f.date_select :fchven %>
+    <%= f.label :fecha_vencimiento %><br>
+    <%= f.date_select :fecha_vencimiento %>
   </div>
-
   
- <div class="field" id="cliente"> 
-   Cliente: <br> <%= f.collection_select :cliente_id, Cliente.all, :id, :nombre, class: 
-     "form­control", prompt: 
-     "Seleccione cliente" %> 
-  </div>  
+<div class="field">
+<%= f.collection_select :cliente_id, Cliente.all, :id, :nombre, class: "form-control", prompt: "Seleccione Cliente" %>
+</div>
+  
+<div class="field">
+<%= f.collection_select :cotizacion_id, Cotizacion.all, :id, :id, class: "form-control", prompt: "Seleccione cotizacion" %>
+</div>
+  <div class="field">
+Activo: <%= f.radio_button(:estado, true) %>
+Inactivo: <%= f.radio_button(:estado, false) %>
+</div>
 
-  <div class="field" id="cotizacion"> 
-   Cotizacion: <br> <%= f.collection_select :cotizacion_id, Cotizacion.all, :id, :id, class: 
-     "form­control", prompt: 
-     "Seleccione ID de la cotizacion" %> 
-  </div>  
-
-
-  <div class="field">
-    <%= f.label :telefono %><br>
-    <%= f.text_field :telefono %>
-  </div>
-  <div class="field">
-    <%= f.label :empresa %><br>
-    <%= f.text_field :empresa %>
-  </div>
-  <div class="field">
-    <%= f.label :nit %><br>
-    <%= f.text_field :nit %>
-  </div>
-  <div class="field">
-    <%= f.label :producto %><br>
-    <%= f.text_field :producto %>
-  </div>
-  <div class="field">
-    <%= f.label :descripcion %><br>
-    <%= f.text_area :descripcion %>
-  </div>
-  <div class="field">
-    <%= f.label :cantidad %><br>
-    <%= f.text_field :cantidad %>
-  </div>
-  <div class="field">
-    <%= f.label :precio %><br>
-    <%= f.number_field :precio %>
-  </div>
   <div class="field">
     <%= f.label :iva %><br>
     <%= f.number_field :iva %>
   </div>
   <div class="field">
-    <%= f.label :subtotal %><br>
-    <%= f.number_field :subtotal %>
+    <%= f.label :total %><br>
+    <%= f.number_field :total %>
   </div>
   <div class="actions">
     <%= f.submit %>

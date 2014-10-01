@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :facturacions
+
   resources :novedades
 
   resources :nominas
@@ -16,8 +18,6 @@ resources :novedades
   resources :cargos
 
   resources :inventarios
-
-  resources :facturacions
 
   resources :cotizacions
 
