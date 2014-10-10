@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :novedades
+   get 'lista_novedades', to:'novedades#lista_novedades'
 
   resources :nominas
 
@@ -29,7 +30,9 @@ resources :novedades
       resources :experiencia
       resources :estudios
       resources :nominas
+      resources :novedades
   end
+
 
 
 

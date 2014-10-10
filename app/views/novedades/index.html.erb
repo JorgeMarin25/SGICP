@@ -1,4 +1,4 @@
-<h1>Listing novedades</h1>
+<h1>Novedad del Empleado </h1>
 
 <table>
   <thead>
@@ -24,15 +24,15 @@
         <td><%= novedade.finvacaciones %></td>
         <td><%= novedade.prendasrealizadas %></td>
         <td><%= novedade.valorprenda %></td>
-        <td><%= suma(novedade.prendasrealizadas, novedade.valorprenda) %></td>
+        <td><%= sumas(novedade.prendasrealizadas, novedade.valorprenda) %></td>
         <td><%= novedade.sueldobasico %></td>
         <td><%= novedade.primalegal %></td>
         <td><%= novedade.festivostrabajados %></td>
         <td><%= novedade.diasnotrabajados %></td>
         <td><%= novedade.horasnotrabajadas %></td>
-        <td><%= link_to 'Show', novedade %></td>
-        <td><%= link_to 'Edit', edit_novedade_path(novedade) %></td>
-        <td><%= link_to 'Destroy', novedade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', empleado_novedade_path(@empleado,novedade) %></td>
+        <td><%= link_to 'Editar', edit_empleado_novedade_path(@empleado,novedade)%></td>
+        <td><%= link_to 'Eliminar', empleado_novedade_path(@empleado,novedade), method: :delete, data: { confirm: 'Esta Seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -40,12 +40,13 @@
 
 <br>
 
-<%= link_to 'New Novedade', new_novedade_path %>
+<%= link_to 'Nueva Novedad', new_empleado_novedade_path(@empleado) %>
+
 
 
 <p>
-  Descargar:
-  <%= link_to "CSV", novedades_path(format: "csv") %> |
-  <%= link_to "Excel", novedades_path(format: "xls") %>
+  Download:
+  <%= link_to "CSV", empleado_novedades_path(format: "csv") %> |
+  <%= link_to "Excel", empleado_novedades_path(format: "xls") %>
 </p>
 

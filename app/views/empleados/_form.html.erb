@@ -79,10 +79,11 @@
     <%= f.text_field :telref %>
   </div>
 
-  <div class="field"> 
-    Activo: <%= f.radio_button(:laborando, true) %> 
-    Inactivo: <%= f.radio_button(:laborando, false) %> 
-   </div> 
+<div class="field">
+    Estado:<br>
+    Habilitado <%= f.radio_button(:activo, true) %>
+    Inabilitado <%= f.radio_button(:activo, false) %>
+</div>
   
   <div class="form­group"> 
   <div class="col­sm­offset­2 col­sm­10"> 

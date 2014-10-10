@@ -4,8 +4,13 @@ class NominasController < ApplicationController
   # GET /nominas
   # GET /nominas.json
   def index
-    @nominas = Nomina.all
     @empleados = Empleado.all
+      respond_to do |format|
+        format.html
+        format.csv { send_data @novedades.to_csv }
+        format.xls # { send_data @novedades.to_csv(col_sep: "\t") }
+      end
+      
   end
 
   # GET /nominas/1

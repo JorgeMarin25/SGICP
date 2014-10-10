@@ -7,13 +7,14 @@ module EmpleadosHelper
      end
 end
 	
-	def mostrar_estado(laborando) 
-	     if laborando
-			"<p class='label label-success'>Activo</p>".html_safe 
+	def mostrar_estado(estado) 
+	     if estado
+			"<p class='label label-success'>HABILITADO</p>".html_safe 
 			else 
-			"<p class='label label-danger'>Inactivo</p>".html_safe 
+			"<p class='label label-danger'>INABILITADO</p>".html_safe 
 	     end 
     end 
 
+   	
 
 end
