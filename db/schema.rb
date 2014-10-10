@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140905210050) do
+ActiveRecord::Schema.define(version: 20140915202544) do
 
   create_table "cargos", force: true do |t|
     t.string   "nombre"
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 20140905210050) do
     t.boolean  "estado"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "fch_creacion"
+    t.date     "fch_final"
   end
 
   create_table "empleados", force: true do |t|
@@ -114,25 +116,22 @@ ActiveRecord::Schema.define(version: 20140905210050) do
   add_index "experiencia", ["empleado_id"], name: "index_experiencia_on_empleado_id"
 
   create_table "facturacions", force: true do |t|
-    t.date     "fecha"
-    t.date     "fchven"
-    t.integer  "cotizacion_id"
+    t.date     "fecha_facturacion"
+    t.date     "fecha_vencimiento"
     t.integer  "cliente_id"
-    t.string   "telefono"
-    t.string   "empresa"
-    t.string   "nit"
-    t.string   "producto"
-    t.text     "descripcion"
-    t.string   "cantidad"
-    t.integer  "precio"
+    t.integer  "cotizacion_id"
+    t.boolean  "estado"
     t.integer  "iva"
-    t.integer  "subtotal"
+    t.integer  "total"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "facturacions", ["cliente_id"], name: "index_facturacions_on_cliente_id"
+  add_index "facturacions", ["cotizacion_id"], name: "index_facturacions_on_cotizacion_id"
+
   create_table "inventarios", force: true do |t|
-    t.string   "productos",  limit: nil
+    t.string   "productos"
     t.integer  "cantidad"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -143,10 +142,7 @@ ActiveRecord::Schema.define(version: 20140905210050) do
     t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
-  
   end
-
-  
 
   create_table "novedades", force: true do |t|
     t.date     "iniciovacaciones"

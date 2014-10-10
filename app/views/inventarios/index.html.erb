@@ -23,13 +23,15 @@ Buscar por producto:
     </tr>
   </thead>
 
-  <tbody>
+  <tbody><% sum = 0 %>
     <% @inventarios.each do |inventario| %>
       <tr>
         <td class="info"><%= inventario.productos %></td>
         <td class="success"><%= inventario.cantidad %></td>
         <td class="danger"><%= inventario.valor %></td>
         <td class="warning"><%= suma(inventario.cantidad, inventario.valor) %></td>
+        <%
+         sum += suma(inventario.cantidad, inventario.valor) %>
         <td class="success"><%= link_to 'Ver', inventario, class: "btn btn-primary btn-xs" %></td>
         <td class="success"><%= link_to 'Editar', edit_inventario_path(inventario), class: "btn btn-primary btn-xs" %></td>
         <td class="success"><%= link_to 'Eliminar', inventario, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning btn-xs" %></td>
@@ -37,6 +39,7 @@ Buscar por producto:
     <% end %>
   </tbody>
 </table>
+<p>suma total: <%= sum.to_s%></p>
 
 <br>
 

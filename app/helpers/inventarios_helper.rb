@@ -1,7 +1,7 @@
 module InventariosHelper
 	def suma(cantidad, valor)
 		res = valor * cantidad.to_i
-		res
+		return res
 		
 	end
 end
