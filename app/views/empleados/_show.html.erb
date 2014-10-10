@@ -79,7 +79,7 @@
 
   <p>
   <strong>Estado:</strong>
-  <%= estado(@empleado.estado) %>
+  <%= mostrar_estado(@empleado.activo) %>
 </p>
 
   <%= link_to 'Editar', edit_empleado_path(@empleado), remote: true, class: "btn btn-primary btn-xs" %> |

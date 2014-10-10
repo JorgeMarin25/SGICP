@@ -1,4 +1,4 @@
-<%= form_for(@novedade) do |f| %>
+<%= simple_form_for [@empleado,@novedade], :html => { :class => 'form-horizontal' } do |f| %>
   <% if @novedade.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@novedade.errors.count, "error") %> prohibited this novedade from being saved:</h2>

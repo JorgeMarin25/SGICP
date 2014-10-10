@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">Empleado</Data></Cell>
+        <Cell><Data ss:Type="String">Documento</Data></Cell>
+        <Cell><Data ss:Type="integer">Vacaciones</Data></Cell>
+        <Cell><Data ss:Type="integer">Fin_Vacaciones</Data></Cell>
+        <Cell><Data ss:Type="integer">Prendas_Realizadas</Data></Cell>
+        <Cell><Data ss:Type="integer">Valor_Prenda</Data></Cell>
+        <Cell><Data ss:Type="integer">Sueldo</Data></Cell>
+        <Cell><Data ss:Type="integer">Festivos</Data></Cell>
+        <Cell><Data ss:Type="integer">Dias_No_Trabajados</Data></Cell>
+        <Cell><Data ss:Type="integer">Horas_No_Trabajadas</Data></Cell>
+        <Cell><Data ss:Type="integer">Valor Total De Prendas</Data></Cell>
+        <Cell><Data ss:Type="integer">Estado</Data></Cell>
+
+      </Row>
+    <% @empleados.each do |empleado|
+        @novedades = empleado.novedades.all      
+        unless @novedades.first.nil?
+
+           @novedades.each do |novedade| %>
+
+            <Row>
+              <Cell><Data ss:Type="String"><%= empleado.nombre %></Data></Cell>
+              <Cell><Data ss:Type="String"><%= empleado.doc %></Data></Cell>
+              <Cell><Data ss:Type="integer"><%= novedade.iniciovacaciones %></Data></Cell>
+              <Cell><Data ss:Type="integer"><%= novedade.finvacaciones %></Data></Cell>
+              <Cell><Data ss:Type="integer"><%= novedade.prendasrealizadas %></Data></Cell>
+              <Cell><Data ss:Type="integer"><%= novedade.valorprenda %></Data></Cell>
+              <Cell><Data ss:Type="integer"><%= novedade.sueldobasico %></Data></Cell>
+              <Cell><Data ss:Type="integer"><%= novedade.festivostrabajados %></Data></Cell>
+              <Cell><Data ss:Type="integer"><%= novedade.diasnotrabajados %></Data></Cell>
+              <Cell><Data ss:Type="integer"><%= novedade.horasnotrabajadas %></Data></Cell>
+              <Cell><Data ss:Type="integer"><%= suma(novedade.prendasrealizadas, novedade.valorprenda) %></Data></Cell>
+              <Cell><Data ss:Type="integer"><%=mostrar_estado(empleado.activo) %></Data></Cell>
+            </Row>
+          <% end %>
+      <%  end  %>
+  <%  end  %>    
+    </Table>
+  </Worksheet>
+</Workbook>
+

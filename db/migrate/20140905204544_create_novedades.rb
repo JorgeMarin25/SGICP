@@ -10,7 +10,7 @@ class CreateNovedades < ActiveRecord::Migration
       t.integer :festivostrabajados
       t.integer :diasnotrabajados
       t.integer :horasnotrabajadas
-
+      t.integer :empleado_id
       t.timestamps
     end
   end
